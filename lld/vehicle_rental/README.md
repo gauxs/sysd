@@ -1,7 +1,9 @@
 # Vehicle Rental Service
+
 You have to design and implement a Vehicle Rental Service which allows users to rent a given type of Vehicle for a given time slot.
 
 ### Requirements
+
 1. This Vehicle Rental Service will be operational only in one city (Delhi) which will have multiple branches (eg. Vasant Vihar Branch, CP branch, etc).
 
 2. Each branch can have three different types of vehicles (VehicleType) : Sedan, Hatchback, SUV. There could be any number of vehicles of each type in a branch.
@@ -11,9 +13,11 @@ You have to design and implement a Vehicle Rental Service which allows users to 
 4. A user can request to rent a particular vehicle type for a given time slot. You will have to allot the vehicle from one of the branches if available for the given time slot with the “lowest rental price” strategy.
 
 ### API
+
 The following APIs have to be implemented:
+
 ```
-ddBranch(branchName);
+addBranch(branchName);
 This will add a new branch for your Service.
 
 allocatePrice(branchName, vehicleType, price);
@@ -28,9 +32,10 @@ This will be used to rent a vehicle for the given vehicle type for a given time 
 [Optional]viewVehicleInventory(startTime, endTime): This will give a snapshot of the inventory for the given time slot i.e. all the vehicles that are available and all the vehicles that are not available categorised by vehicleType.
 ```
 
-***Note: The given parameters are the mandatory parameters, you are free to add more parameters as part of your apis if you feel the need to do so. The return type of each api is up to you but make sure it provides the relevant information needed.***
+**_Note: The given parameters are the mandatory parameters, you are free to add more parameters as part of your apis if you feel the need to do so. The return type of each api is up to you but make sure it provides the relevant information needed._**
 
 ### Guidelines
+
 1. You should store the data in-memory using a language-specific data-structure.
 
 2. You can print the output in console.
@@ -44,6 +49,7 @@ This will be used to rent a vehicle for the given vehicle type for a given time 
 6. The start time and end time will be in hourly granularity only.
 
 ### Expectations
+
 1. Your code should cover all the mandatory functionalities explained above.
 
 2. Your code should be executable and clean.
@@ -51,4 +57,5 @@ This will be used to rent a vehicle for the given vehicle type for a given time 
 3. Your code should be properly refactored, and exceptions should be gracefully handled.
 
 ## References
+
 1. [Leetcode - PhonePay machine coding round](https://leetcode.com/discuss/interview-question/1750542/PhonePe-or-Machine-Coding-or-Not-Selected)
