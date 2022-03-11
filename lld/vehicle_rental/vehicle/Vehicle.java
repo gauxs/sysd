@@ -26,6 +26,14 @@ public class Vehicle {
         BranchManager.getBranchManager().addVehicle(branchID, this.id);
     }
 
+    public String toString() {
+        String vehicle = "Vehicle Description\n";
+        vehicle += "Vehicle ID: " + this.id + "\n";
+        vehicle += "Branch ID: " + this.branchID + "\n";
+        vehicle += "Category: " + this.category.toString() + "\n";
+        return vehicle;
+    }
+
     public Integer getID() {
         return this.id;
     }

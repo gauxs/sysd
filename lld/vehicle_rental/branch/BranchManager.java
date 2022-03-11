@@ -18,13 +18,13 @@ public class BranchManager {
 
     public Integer addBranch(String name) {
         Branch b = new Branch(name);
-        branchDB.put(b.getID(), b);
+        this.branchDB.put(b.getID(), b);
 
         return b.getID();
     }
 
     public Branch getBranch(Integer branchID) {
-        return branchDB.get(branchID);
+        return this.branchDB.get(branchID);
     }
 
     public void updateVehicleCategoryPrice(Integer branchID, VehicleCategory category, Integer newPrice) {

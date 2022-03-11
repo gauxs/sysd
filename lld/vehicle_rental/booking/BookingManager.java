@@ -1,11 +1,10 @@
 package lld.vehicle_rental.booking;
 
 import java.util.*;
-import java.time.*;
 import lld.vehicle_rental.vehicle.*;
 
 public class BookingManager {
-    public Booking bookVehicle(LocalDate startTime, LocalDate endTime, VehicleCategory category) {
+    public static Booking bookVehicle(Integer startTime, Integer endTime, VehicleCategory category) {
         // get all vehicles from Inventory
         VehicleManager vm = VehicleManager.getVehicleManager();
         List<Vehicle> vehicles = vm.getAvailaibility(startTime, endTime);
