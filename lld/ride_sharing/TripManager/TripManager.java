@@ -48,18 +48,20 @@ public class TripManager {
         }
     }
 
-    List<List<Trip>> searchTrips(Location source, Location destination, TripFilters filter) {
+    List<List<Trip>> searchTrips(Location source, Location destination, TripFilters filter, Integer numOfSeats) {
         List<List<Trip>> ret = new ArrayList<>();
 
         List<Trip> tripsFromSource = trips.get(source);
         for (int i = 0; i < tripsFromSource.size(); i++) {
             if (filter.isValidTrip(tripsFromSource.get(i))) {
+                // TODO: filter on basis of seats too
+                // use create trip and reduce available seats
                 if (tripsFromSource.get(i).destination == destination) {
                     List<Trip> myTrip = new ArrayList<>();
                     myTrip.add(tripsFromSource.get(i));
                     ret.add(myTrip);
                 } else {
-                    List<List<Trip>> myTrips = searchTrips(source, destination, filter);
+                    List<List<Trip>> myTrips = searchTrips(source, destination, filter, numOfSeats);
                     for (List<Trip> ts : myTrips) {
                         ts.add(tripsFromSource.get(i));
                         ret.add(ts);
