@@ -7,28 +7,36 @@ class VehicleBookingInfo {
     private Integer StartTime;
     private Integer EndTime;
 
-    public void setVehicleID(Integer vehicleID) {
-        VehicleID = vehicleID;
+    public String toString() {
+        String bookingInfo = "Vehicle Booking Info: \n";
+        bookingInfo += "Vehicle ID: " + this.VehicleID + "\n";
+        bookingInfo += "Vehicle start Time: " + this.StartTime + "\n";
+        bookingInfo += "Vehicle end Time: " + this.EndTime + "\n";
+        return bookingInfo;
     }
 
-    public Integer getVehicleID() {
-        return VehicleID;
+    void setVehicleID(Integer vehicleID) {
+        this.VehicleID = vehicleID;
     }
 
-    public void setStartTime(Integer startTime) {
-        StartTime = startTime;
+    Integer getVehicleID() {
+        return this.VehicleID;
     }
 
-    public Integer getStartTime() {
-        return StartTime;
+    void setStartTime(Integer startTime) {
+        this.StartTime = startTime;
     }
 
-    public void setEndTime(Integer endTime) {
-        EndTime = endTime;
+    Integer getStartTime() {
+        return this.StartTime;
     }
 
-    public Integer getEndTime() {
-        return EndTime;
+    void setEndTime(Integer endTime) {
+        this.EndTime = endTime;
+    }
+
+    Integer getEndTime() {
+        return this.EndTime;
     }
 }
 
@@ -47,9 +55,7 @@ public class Booking {
     public String toString() {
         String booking = "Booking Info\n";
         booking += "Booking ID: " + this.bookingID + "\n";
-        booking += "Vehicle ID: " + this.vehicleInfo.getVehicleID() + "\n";
-        booking += "Vehicle start Time: " + this.vehicleInfo.getStartTime() + "\n";
-        booking += "Vehicle end Time: " + this.vehicleInfo.getEndTime() + "\n";
+        booking += this.vehicleInfo.toString();
         return booking;
     }
 

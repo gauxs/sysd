@@ -3,9 +3,6 @@ package lld.vehicle_rental.vehicle;
 import java.util.concurrent.ThreadLocalRandom;
 import lld.vehicle_rental.branch.*;
 
-/*
-    vehicle can be created with or without branch
-*/
 public class Vehicle {
     private Integer id;
     private Integer branchID;
@@ -27,10 +24,10 @@ public class Vehicle {
     }
 
     public String toString() {
-        String vehicle = "Vehicle Description\n";
+        String vehicle = "Vehicle Description: \n";
         vehicle += "Vehicle ID: " + this.id + "\n";
         vehicle += "Branch ID: " + this.branchID + "\n";
-        vehicle += "Category: " + this.category.toString() + "\n";
+        vehicle += "Vehicle Category: " + this.category.toString() + "\n";
         return vehicle;
     }
 

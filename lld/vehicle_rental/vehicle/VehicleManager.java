@@ -109,6 +109,7 @@ public class VehicleManager {
             this.availabilityDB.get(i).add(v.getID());
         }
 
+        BranchManager.getBranchManager().addVehicle(branchID, v.getID());
         return v.getID();
     }
 
@@ -126,7 +127,7 @@ public class VehicleManager {
         v.updateBranch(branchID);
 
         // adding this vehicle to specified branch
-        BranchManager.getBranchManager().removeVehicle(branchID, v.getID());
+        BranchManager.getBranchManager().addVehicle(branchID, vehicleID);
     }
 
     public void updateCategory(Integer vehicleID, VehicleCategory category) {

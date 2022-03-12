@@ -5,11 +5,8 @@ You have to design and implement a Vehicle Rental Service which allows users to 
 ### Requirements
 
 1. This Vehicle Rental Service will be operational only in one city (Delhi) which will have multiple branches (eg. Vasant Vihar Branch, CP branch, etc).
-
 2. Each branch can have three different types of vehicles (VehicleType) : Sedan, Hatchback, SUV. There could be any number of vehicles of each type in a branch.
-
 3. The rental price per hour should be defined at “per branch per vehicle type” level and NOT at an individual vehicle level. (eg. Sedan in CP branch = 150 rs/hr, Sedan in Vasant Vihar = 100 rs/hr, Hatchback in CP = 80rs/hr and so on)
-
 4. A user can request to rent a particular vehicle type for a given time slot. You will have to allot the vehicle from one of the branches if available for the given time slot with the “lowest rental price” strategy.
 
 ### API
@@ -37,24 +34,25 @@ This will be used to rent a vehicle for the given vehicle type for a given time 
 ### Guidelines
 
 1. You should store the data in-memory using a language-specific data-structure.
-
 2. You can print the output in console.
-
 3. Design your application in a way that a new rental Strategy can be implemented and used instead of the default one (lowest price).
-
 4. Implement clear separation between your data layers and service layers.
-
 5. You can take the startTime and endTime as DateTime or in any other way as you prefer.
-
 6. The start time and end time will be in hourly granularity only.
 
 ### Expectations
 
 1. Your code should cover all the mandatory functionalities explained above.
-
 2. Your code should be executable and clean.
-
 3. Your code should be properly refactored, and exceptions should be gracefully handled.
+
+### Solution Analysis
+
+1. **Vehicle** class is a representation of information held by a vehicle, it could very well be the DB schema for vehicle, same with **Booking** and **Branch** class.
+2. **VehicleManager** class hold responsibility of operating on **Vehicle** data, in a way, **VehicleManager** class is a **vehicle service layer/microservice**, same with **BranchManager** and **BookingManager**.
+3. **VehicleManager** holds **availabilityDB** and **vehicleDB**, in a microservice ecosystem, this can be seen as, there is a serive layer for vehicles which owns its own databases i.e. **availabilityDB** and **vehicleDB**.
+4. If we want other **Manager class/microservice** to have access to this database, we can make **availabilityDB** and **vehicleDB** as **static** or create a seperate DB class.
+5. Each instance of **VehicleManager** class can be seen as a horizontally scaled microservice instance.
 
 ## References
 
