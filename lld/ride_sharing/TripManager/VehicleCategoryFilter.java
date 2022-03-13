@@ -7,15 +7,13 @@ import lld.ride_sharing.Vehicle.VehicleCategory;
 import lld.ride_sharing.Vehicle.VehicleManager;
 
 public class VehicleCategoryFilter implements TripFilters {
-    private static VehicleCategoryFilter vehicleCategoryFilter;
-    public static List<VehicleCategory> eligibleCategories;
+    private List<VehicleCategory> eligibleCategories;
 
-    public static VehicleCategoryFilter getVehicleCategoryFilter() {
-        if (vehicleCategoryFilter == null) {
-            vehicleCategoryFilter = new VehicleCategoryFilter();
+    public VehicleCategoryFilter(VehicleCategory... categories) {
+        this.eligibleCategories = new ArrayList<>();
+        for (int i = 0; i < categories.length; i++) {
+            this.eligibleCategories.add(categories[i]);
         }
-
-        return vehicleCategoryFilter;
     }
 
     public void addEligibleCategory(VehicleCategory category) {

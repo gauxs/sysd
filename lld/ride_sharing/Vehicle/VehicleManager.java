@@ -18,8 +18,8 @@ public class VehicleManager {
         return vehicleDB.get(vehicleID);
     }
 
-    public Integer addVehicle(Integer ownerID, Integer numberOfSeats, VehicleCategory category) {
-        Vehicle newVehicle = new Vehicle(ownerID, numberOfSeats, category);
+    public Integer addVehicle(String ownerName, Integer vehicleID, Integer numberOfSeats, VehicleCategory category) {
+        Vehicle newVehicle = new Vehicle(ownerName, vehicleID, numberOfSeats, category);
         vehicleDB.put(newVehicle.vehicleID, newVehicle);
         return newVehicle.getVehicleID();
     }
