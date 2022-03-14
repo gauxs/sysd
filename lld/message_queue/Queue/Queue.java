@@ -19,13 +19,13 @@ public class Queue {
         }
         this.defaultBatchSize = defaultBatchSize;
         this.subscribers = new HashMap<>();
-        this.queueEnd = 0;
+        this.queueEnd = -1;
         this.queueFront = 0;
     }
 
     public Integer numberOfElements() {
         if (this.queueEnd >= this.queueFront) {
-            return Math.abs(this.queueEnd - this.queueFront + 1);
+            return Math.abs(this.queueEnd - this.queueFront) + 1;
         } else {
             return Math.abs(this.capacity - this.queueFront) + this.queueEnd;
         }
@@ -55,7 +55,7 @@ public class Queue {
             if (subscriberQueueFront != -1) {
                 String message = "";
                 while (subscriberQueueFront != this.queueEnd) {
-                    message += this.store.get(subscriberQueueFront);
+                    message += this.store.get(subscriberQueueFront) + " ";
                     subscriberQueueFront = (subscriberQueueFront + 1) % this.capacity;
                 }
 

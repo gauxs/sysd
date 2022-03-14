@@ -36,6 +36,6 @@ public class Subscriber {
     }
 
     public void doCallback(String message) {
-        System.out.println(this.name + ": " + this.callBack + message);
+        System.out.println(this.name + ": " + this.callBack + " Message: " + message);
     }
 }
