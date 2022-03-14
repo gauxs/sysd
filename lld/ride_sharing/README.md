@@ -40,14 +40,12 @@ Implement a ride-sharing application with the below-expected features.
    > ADDU GYAM <br>
    > ADDU DHYAM <br>
    > ADDU LYAM <br>
-   > ADDU GAUX <br>
    > ADDV RAM 100 HATCHBACK 4 <br>
    > ADDV SHYAM 200 SUV 4 <br>
    > ADDV GYAM 300 SEDAN 2 <br>
    > OFFER RAM INDIA PAKISTAN 100 <br>
    > OFFER SHYAM PAKISTAN AMERICA 200 <br>
    > OFFER GYAM AMERICA NEPAL 300 <br>
-   > OFFER GAUX INDIA AMERICA 400 <br>
    > BOOK DHYAM INDIA PAKISTAN 2 <br>
    > BOOK LYAM AMERICA NEPAL 1 <br>
 
