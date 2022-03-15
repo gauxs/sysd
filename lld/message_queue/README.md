@@ -23,17 +23,27 @@ Developing a message queueing system.
 5. Exceptions are raised and handled appropriately.
 6. Separation of concerns is addressed.
 
+### Learnings
+
+There are two major differences between Observer/Observable and Publisher/Subscriber patterns:
+
+1. Observer/Observable pattern is mostly implemented in a synchronous way, i.e. the observable calls the appropriate method of all its observers when some event occurs(direct communication). The Publisher/Subscriber pattern is mostly implemented in an asynchronous way (using message queue, intermediary handles filtering and routing).
+
+2. In the Observer/Observable pattern, the observers are aware of the observable. Whereas, in Publisher/Subscriber, publishers and subscribers don't need to know each other. They simply communicate with the help of message queues.
+
 ### Testcases
 
-1. > ADDQ QUEUE1 5 1 <br>
-   > ADDSUB QUEUE1 GAUX GAUX_CALLBACK 2 <br>
-   > PUSH QUEUE1 MSG1 <br>
-   > PUSH QUEUE1 MSG2 <br>
-   > PUSH QUEUE1 MSG3 <br>
-   > PUSH QUEUE1 MSG4 <br>
-   > PUSH QUEUE1 MSG5 <br>
-   > PUSH QUEUE1 MSG6 <br>
-   > SIZE QUEUE1 <br>
+1. > TOPIC FOOD <br>
+   > SUBSCRIBER FOOD RAM 2 <br>
+   > SUBSCRIBER FOOD SHYAM 3 <br>
+   > PUBLISHER DOMINOS <br>
+   > PUBLISHER SUBWAY <br>
+   > PUBLISH DOMINOS FOOD PIZZA1 <br>
+   > PUBLISH SUBWAY FOOD SANDWICH1 <br>
+   > PUBLISH DOMINOS FOOD PIZZA2 <br>
+   > PUBLISH SUBWAY FOOD SANDWICH2 <br>
+   > PUBLISH DOMINOS FOOD PIZZA3 <br>
+   > PUBLISH SUBWAY FOOD SANDWICH3 <br>
 
 2. > ADDQ QUEUE1 5 1 <br>
    > ADDSUB QUEUE1 GAUX GAUX_CALLBACK 2 <br>

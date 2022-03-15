@@ -1,96 +1,30 @@
 package lld.message_queue.Queue;
 
 import java.util.*;
+import lld.message_queue.message.Message;
 
 public class Queue {
-    String name;
-    Integer capacity;
-    List<String> store;
-    Integer defaultBatchSize;
-    Integer queueFront, queueEnd;
-    HashMap<String, Subscriber> subscribers;
+    private String name;
+    private Vector<Message> store;
 
-    public Queue(String queueName, Integer capacity, Integer defaultBatchSize) {
+    public Queue(String queueName) {
         this.name = queueName;
-        this.capacity = capacity;
-        this.store = new ArrayList<>();
-        for (int i = 0; i < this.capacity; i++) {
-            this.store.add("");
-        }
-        this.defaultBatchSize = defaultBatchSize;
-        this.subscribers = new HashMap<>();
-        this.queueEnd = -1;
-        this.queueFront = 0;
+        this.store = new Vector<>();
     }
 
-    public Integer numberOfElements() {
-        if (this.queueEnd >= this.queueFront) {
-            return Math.abs(this.queueEnd - this.queueFront) + 1;
-        } else {
-            return Math.abs(this.capacity - this.queueFront) + this.queueEnd;
-        }
+    public String getName() {
+        return name;
     }
 
-    public void addSubscriber(String subscriberName, String callback, Integer batchSize) {
-        if (this.capacity <= (batchSize * 2)) {
-            this.resize();
-        }
-
-        Subscriber s = new Subscriber(subscriberName, callback, batchSize, (this.queueEnd + 1) % this.capacity);
-        this.subscribers.put(subscriberName, s);
+    public Integer size() {
+        return this.store.size();
     }
 
-    public void push(String message) {
-        this.queueEnd = (this.queueEnd + 1) % this.capacity;
-        this.store.add(this.queueEnd, message);
-
-        invokeCallbacks();
-        flushOldEntries();
+    public void storeMessage(Message msg) {
+        this.store.add(msg);
     }
 
-    private void invokeCallbacks() {
-        for (Map.Entry<String, Subscriber> sub : this.subscribers.entrySet()) {
-            Subscriber s = sub.getValue();
-            Integer subscriberQueueFront = s.eligibleForCallback(this.queueEnd, this.capacity);
-            if (subscriberQueueFront != -1) {
-                String message = "";
-                while (subscriberQueueFront != this.queueEnd) {
-                    message += this.store.get(subscriberQueueFront) + " ";
-                    subscriberQueueFront = (subscriberQueueFront + 1) % this.capacity;
-                }
-
-                message += this.store.get(subscriberQueueFront);
-                s.doCallback(message);
-            }
-        }
+    public List<Message> getMessages(Integer lOffset, Integer rOffset) {
+        return this.store.subList(lOffset, rOffset);
     }
-
-    private void flushOldEntries() {
-        Integer toFlush = Integer.MAX_VALUE;
-        Integer toFlushIndex = 0;
-        for (Map.Entry<String, Subscriber> sub : this.subscribers.entrySet()) {
-            Subscriber s = sub.getValue();
-            Integer subQueueFront = s.getQueueFront();
-            if (this.queueEnd >= subQueueFront) {
-                if (Math.abs(this.queueEnd - subQueueFront + 1) <= toFlush) {
-                    toFlushIndex = subQueueFront;
-                }
-            } else {
-                if ((Math.abs(this.capacity - subQueueFront) + this.queueEnd) <= toFlush) {
-                    toFlushIndex = subQueueFront;
-                }
-            }
-        }
-
-        this.queueFront = toFlushIndex;
-    }
-
-    private void resize() {
-
-    }
-
-    public void removeSubscribers() {
-
-    }
-
 }
