@@ -4,9 +4,9 @@ import lld.actor_system.actor.ActorOperation;
 
 public class Message {
     private String logMessage;
-    private String destActorName;
-    private String actorToCreateName;
-    private Message msgToDeliver;
+    private String destActorName; // message intended for another actor
+    private String actorToCreateName; // message to create actor
+    private Message msgToDeliver; // msg to deliver in case of destActorName
     private ActorOperation operation;
 
     public Message(ActorOperation op) {

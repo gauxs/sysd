@@ -17,11 +17,15 @@ public class Queue {
     }
 
     public Integer size() {
-        return this.store.size();
+        synchronized (this.store) {
+            return this.store.size();
+        }
     }
 
     public void storeMessage(Message msg) {
-        this.store.add(msg);
+        synchronized (this.store) {
+            this.store.add(msg);
+        }
     }
 
     public List<Message> getMessages(Integer lOffset, Integer rOffset) {

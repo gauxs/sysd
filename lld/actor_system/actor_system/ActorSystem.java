@@ -23,7 +23,7 @@ public class ActorSystem {
     public void deliverMessage(String actorName, Message msg) {
         Actor a = this.actors.get(actorName);
         if (a == null) {
-            System.err.println("[ERROR] Actor " + actorName + " doesn't exist!");
+            System.err.println("[ERROR] cannot deliver message,actor " + actorName + " doesn't exist!");
             return;
         }
 
