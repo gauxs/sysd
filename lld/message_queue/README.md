@@ -31,6 +31,8 @@ There are two major differences between Observer/Observable and Publisher/Subscr
 
 2. In the Observer/Observable pattern, the observers are aware of the observable. Whereas, in Publisher/Subscriber, publishers and subscribers don't need to know each other. They simply communicate with the help of message queues.
 
+3. Further improvements: Handle exceptions, use native arrays instead of vectors and implement resize.
+
 ### Testcases
 
 1. > TOPIC FOOD <br>
@@ -45,16 +47,19 @@ There are two major differences between Observer/Observable and Publisher/Subscr
    > PUBLISH DOMINOS FOOD PIZZA3 <br>
    > PUBLISH SUBWAY FOOD SANDWICH3 <br>
 
-2. > ADDQ QUEUE1 5 1 <br>
-   > ADDSUB QUEUE1 GAUX GAUX_CALLBACK 2 <br>
-   > ADDSUB QUEUE1 SHYAM SHYAM_CALLBACK 3 <br>
-   > PUSH QUEUE1 MSG1 <br>
-   > PUSH QUEUE1 MSG2 <br>
-   > PUSH QUEUE1 MSG3 <br>
-   > PUSH QUEUE1 MSG4 <br>
-   > PUSH QUEUE1 MSG5 <br>
-   > PUSH QUEUE1 MSG6 <br>
-   > SIZE QUEUE1 <br>
+2. > TOPIC FOOD <br>
+   > TOPIC GAMES <br>
+   > SUBSCRIBER GAMES GAUX 2 <br>
+   > SUBSCRIBER FOOD SHYAM 1 <br>
+   > SUBSCRIBER FOOD DHYAM 3 <br>
+   > PUBLISHER DOMINOS <br>
+   > PUBLISHER ACTIVISON <br>
+   > PUBLISH DOMINOS FOOD PIZZA1 <br>
+   > PUBLISH ACTIVISON GAMES GOD_OF_WAR <br>
+   > PUBLISH DOMINOS FOOD PIZZA2 <br>
+   > PUBLISH ACTIVISON GAMES ASSASSIN <br>
+   > PUBLISH DOMINOS FOOD PIZZA3 <br>
+   > PUBLISH ACTIVISON GAMES ELDEN_RING <br>
 
 ## References
 
