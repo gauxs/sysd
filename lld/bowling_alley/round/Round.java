@@ -8,14 +8,14 @@ import lld.bowling_alley.play.*;
 public class Round {
     Integer maxPins;
     Integer maxPlays;
-    Integer totalBonus;
+    Integer bonus;
     Integer pinsDroppedTillNow;
     List<Play> plays;
 
     public Round() {
         this.maxPins = 10;
         this.maxPlays = 2;
-        this.totalBonus = 0;
+        this.bonus = 0;
         this.pinsDroppedTillNow = 0;
         this.plays = new ArrayList<>();
     }
@@ -25,7 +25,7 @@ public class Round {
     }
 
     public Integer getTotalBonus() {
-        return this.totalBonus;
+        return this.bonus;
     }
 
     public void play() {
@@ -34,7 +34,7 @@ public class Round {
             Play p = new Play(playNumber, this.maxPins - this.pinsDroppedTillNow);
             p.play();
             this.pinsDroppedTillNow += p.getPinsDropped();
-            this.totalBonus += p.getBonus();
+            this.bonus += p.getBonus();
             this.plays.add(p);
 
             if (this.pinsDroppedTillNow == this.maxPins)

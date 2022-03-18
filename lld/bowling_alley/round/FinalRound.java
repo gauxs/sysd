@@ -17,7 +17,7 @@ public class FinalRound extends Round {
         Play p = new Play(playNumber, this.maxPins);
         p.play();
         this.pinsDroppedTillNow += p.getPinsDropped();
-        this.totalBonus += p.getBonus();
+        this.bonus += p.getBonus();
         this.plays.add(p);
 
         Integer nextPlayPins = p.getPinsDropped();
@@ -28,7 +28,7 @@ public class FinalRound extends Round {
         p = new Play(playNumber, nextPlayPins);
         p.play();
         this.pinsDroppedTillNow += p.getPinsDropped();
-        this.totalBonus += p.getBonus();
+        this.bonus += p.getBonus();
         this.plays.add(p);
     }
 
@@ -38,7 +38,7 @@ public class FinalRound extends Round {
             Play p = new Play(playNumber, this.maxPins - this.pinsDroppedTillNow);
             p.play();
             this.pinsDroppedTillNow += p.getPinsDropped();
-            this.totalBonus += p.getBonus();
+            this.bonus += p.getBonus();
             this.plays.add(p);
 
             if (this.pinsDroppedTillNow == this.maxPins)
@@ -47,7 +47,7 @@ public class FinalRound extends Round {
             playNumber++;
         }
 
-        if (this.totalBonus > 0) {
+        if (this.bonus > 0) {
             this.playBonus();
         }
     }
