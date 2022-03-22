@@ -8,6 +8,8 @@ Caching is most common example of replication. Caching is used to leveage on fol
 1. Hardware - storing replica on more performant hardware(e.g. RAM) improves latency.
 2. Disance - storing replica near users(e.g. CDN) thus reducing distance improves latency.
 
+<img src="https://github.com/gauxs/sysd/blob/master/media/image/part-repl.png?raw=true" width="500" height="400">
+
 ### What is replication?
 Replication is making copies of the same data on multiple machines; this allows more servers to take part in the computation. Replication - copying or reproducing something - is the primary way in which we can fight latency.
 
