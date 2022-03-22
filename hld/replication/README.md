@@ -7,3 +7,6 @@ There are two basic techniques that can be applied to a data set. It can be spli
 Caching is most common example of replication. Caching is used to leveage on following attribute of the system:
 1. Hardware - storing replica on more performant hardware(e.g. RAM) improves latency.
 2. Disance - storing replica near users(e.g. CDN) thus reducing distance improves latency.
+
+## Reference
+1. [Awesome book on basics of system design](http://book.mixu.net/distsys/single-page.html)
