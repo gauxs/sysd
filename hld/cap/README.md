@@ -15,3 +15,14 @@ Note that the theorem states that the middle piece (having all three properties)
 3. AP (availability + partition tolerance). Examples include protocols using conflict resolution, such as Dynamo.
 
 The CA and CP system designs both offer the same consistency model: strong consistency. 
+
+### What are CA systems? Do they exist?
+No, CA sysems in a distribued setting cannot exist. As often mentioned, the CAP theorem in its original form is a little misleading. It can be restated as:
+> in the presence of the network partition, a distributed system is either available or consistent
+
+Generally, systems **cannot** be classified as CA but CP or AP only, since partition tolerance is a property of the system, which describes what to choose in case of a network partition. 
+
+Another interesting part is that RDBMS databases are often at the CA side of the triangle. **This is only the case in a single node setup**. Even with master (write) - slave (read) setup, the system is not CA (or if it is termed "CA" for some reason, and cannot recover from network partitions, then a split-bran scenario may happen, a new master is elected for the partition, and chaos ensues, possibly breaking the consistency of the system).
+
+## Reference
+1. [Stackoverflow - How CA distributed system according to CAP theorem can exist?](https://stackoverflow.com/questions/47539213/how-ca-distributed-system-according-to-cap-theorem-can-exist)
