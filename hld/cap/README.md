@@ -25,9 +25,7 @@ Generally, systems **cannot** be classified as CA but CP or AP only, since parti
 Another interesting part is that RDBMS databases are often at the CA side of the triangle. **This is only the case in a single node setup**. Even with master (write) - slave (read) setup, the system is not CA (or if it is termed "CA" for some reason, and cannot recover from network partitions, then a split-bran scenario may happen, a new master is elected for the partition, and chaos ensues, possibly breaking the consistency of the system).
 
 ### What are CP systems?
-A CP system prevents divergence (e.g. maintains single-copy consistency) by forcing asymmetric behavior on the two sides of the partition. It only keeps the majority partition around, and requires the minority partition to become unavailable (e.g. stop accepting writes), which **retains a degree of availability (the majority partition)** and still ensures single-copy consistency.
-
-
+A CP system prevents divergence (e.g. maintains single-copy consistency) by forcing asymmetric behavior on the two sides of the partition. It only keeps the majority partition around, and requires the minority partition to become unavailable (e.g. stop accepting writes), which **retains a degree of availability (the majority partition)** and still ensures single-copy consistency. Example: Paxos algorithm - It is used in many of Google's systems, including the Chubby lock manager used by BigTable/Megastore, the Google File System as well as Spanner, ZAB - the Zookeeper Atomic Broadcast protocol is used in Apache Zookeeper which is base in Hadoop-centric distributed systems for coordination (e.g. HBase, Storm, Kafka), Raft algorithm - used in etcd inspired by ZooKeeper.
 
 ## Reference
 1. [Stackoverflow - How CA distributed system according to CAP theorem can exist?](https://stackoverflow.com/questions/47539213/how-ca-distributed-system-according-to-cap-theorem-can-exist)
