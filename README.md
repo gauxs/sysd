@@ -1,6 +1,6 @@
 # System Design
 
-Information i gathered while learning system(high level) and low level designing.
+Things i learned while learning about distributed programming[^1].
 
 ## Low Level Design
 
@@ -16,3 +16,5 @@ These are sysem design. References:
 
 1. [An awesome book](http://book.mixu.net/distsys/single-page.html)
 2. [System Design Primer](https://github.com/donnemartin/system-design-primer)
+
+[^1]: Distributed programming is the art of solving the same problem that you can solve on a single computer using multiple computers.
