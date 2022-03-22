@@ -34,5 +34,11 @@ A CP system prevents divergence (e.g. maintains single-copy consistency) by forc
 An AP system allows nodes do diverge while providing high availability and that nodes can for some time diverge from each other, but eventually they will agree on the value, this is called **eventual consistency**. Example: 
 1. Amazon's Dynamo system design (2007) is probably the best-known system that offers weak consistency guarantees but high availability. It is the basis for many other real world systems, including LinkedIn's Voldemort, Facebook's Cassandra and Basho's Riak.
 
+### Takeaways from CAP theorem
+1. Many system designs used in early distributed relational database systems did not take into account partition tolerance (e.g. they were CA designs).
+2. There is a tension between strong consistency and high availability during network partitions.
+3. There is a tension between strong consistency and performance in normal operation.
+4. If we do not want to give up availability during a network partition, then we need to explore whether consistency models other than strong consistency are workable for our purposes.
+
 ## Reference
 1. [Stackoverflow - How CA distributed system according to CAP theorem can exist?](https://stackoverflow.com/questions/47539213/how-ca-distributed-system-according-to-cap-theorem-can-exist)
