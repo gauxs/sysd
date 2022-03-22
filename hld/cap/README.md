@@ -7,6 +7,8 @@ The theorem states that of these three properties:
 
 only two can be satisfied simultaneously.
 
+<img src="https://github.com/gauxs/sysd/blob/master/media/image/CAP.png?raw=true" width="500" height="400">
+
 Note that the theorem states that the middle piece (having all three properties) is not achievable. Then we get three different system types:
 1. CA (consistency + availability). Examples include full strict quorum protocols, such as two-phase commit.
 2. CP (consistency + partition tolerance). Examples include majority quorum protocols in which minority partitions are unavailable such as Paxos.
