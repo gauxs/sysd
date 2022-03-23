@@ -69,4 +69,4 @@ A [wide-column database](https://www.scylladb.com/glossary/wide-column-database/
 1. Common features: `primary database model - wide column store` | `schema free` | `restricted secondary indexing` | `partitioning - sharding` | `selectable replication` | `supports map-reduce` | `eventual consistency` | `no transaction concepts` | `concurrent` | `durable` | `no in-memory capabilities`
 2. [Cassandra - wide-column store based on ideas of BigTable and DynamoDB](https://db-engines.com/en/system/Cassandra)
 3. Thoughts:
-   - its an AP system
+   - its an AP system with eventual consistency
