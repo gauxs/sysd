@@ -8,6 +8,6 @@
 
 ### RDBMS systems
 
-`multi-source replication` | `strong consistency` | `ACID transaction` | `concurrent` | `durable` | `in-memory capabilities` | `secondary indexing`
+1. MySQL, Oracle
 
-Example: MySQL, Oracle
+- Features: `multi-source replication` | `strong consistency` | `ACID transaction` | `concurrent` | `durable` | `in-memory capabilities` | `secondary indexing`
