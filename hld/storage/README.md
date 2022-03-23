@@ -19,7 +19,8 @@
    - MySQL cluster etc. provides strong consistency, can be used where transaction properties are needed
    - by default, MySQL(stores data at single node) uses asynchronous primary/backup replication which provides weak consistency guarantees.
    - MySQL cluster(stores data in multiple nodes) provides synchronous replication via two phase commit(2PC) protocol
-   - 2PC is a CA - it is not partition tolerant, there is no safe way to promote a new coordinator if one fails; rather a manual intervention is required. 2PC is also fairly latency-sensitive, since it is a write N-of-N approach in which writes cannot proceed until the slowest node acknowledges them.
+   - 2PC is a CA - it is not partition tolerant, there is no safe way to promote a new coordinator if one fails; rather a manual intervention is required. 2PC is also fairly latency-sensitive, since it is a write N-of-N approach in which writes cannot proceed until the slowest node acknowledges them
+   - use this if we have structured data and if we need ACID properties
 
 ### [Key-value store](https://db-engines.com/en/ranking/key-value+store)
 
@@ -54,6 +55,7 @@ Documents are addressed in the database via a unique key that represents that do
    - dynamo follows ACID properties where as mongo follows multi-document ACID transactions with snapshot isolation
    - mongo has in-memory capabilities
    - both dynamo and mogo provides eventual consistency but dynamo provides immediate consistency for read operations and mongo provides for write operations
+   - use document store DB if we have lot of structures in the data and lot of queries needs to be built on the data we can use this. Example: catalog system of amazon
 
 ### [Search Engines](https://db-engines.com/en/ranking/search+engine)
 
@@ -75,6 +77,7 @@ A [wide-column database](https://www.scylladb.com/glossary/wide-column-database/
 2. [Cassandra - wide-column store based on ideas of BigTable and DynamoDB](https://db-engines.com/en/system/Cassandra)
 3. Thoughts:
    - its an AP system with eventual consistency
+   - use wide-column store DB if we have ever increasing data and finite number of queries needs to be built on the data. Example: location records of uber drivers
 
 ### [Time series stores](https://db-engines.com/en/ranking/time+series+dbms)
 
@@ -104,6 +107,14 @@ Efficiently store and process large datasets ranging in size from gigabytes to p
    - if we need to perform analytics on the data of the whole company we might need a data warehouse
    - large database which can store huge amount of data
    - generally used for offline reporting
+
+### Can we use combination of these databases?
+
+Consider a scenario for amazon where orders are placed everyday, these order are additive and are ever increasing, intuition tells to uses wide-column database but we also need ACID property which is not provided by wide-column databases.
+
+In such case we store current unfinished orders in an RDBMS and leverage ACID properties. Once the orders are fullfiled we can move the data to a wide-column database.
+
+But if we need to perform multiple complex query on this data then a document DB makes more sense, what we can do is after order is fulfilled we can move query related attribute to a document DB to support complex query and all the data to wide-column DB.
 
 ## Reference
 
