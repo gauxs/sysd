@@ -32,6 +32,8 @@
    - dynamo has no in-memory capabilities
    - dynamo follows ACID properties
    - both are schema free
+   - prefer redis because its widely used in scaled scenarios and is stable
+   - redis is generally used as a cache solution
 
 ### [Document store](https://db-engines.com/en/ranking/document+store)
 
@@ -70,3 +72,13 @@ A [wide-column database](https://www.scylladb.com/glossary/wide-column-database/
 2. [Cassandra - wide-column store based on ideas of BigTable and DynamoDB](https://db-engines.com/en/system/Cassandra)
 3. Thoughts:
    - its an AP system with eventual consistency
+
+### File(object) store
+
+1. [Amazon simple storage service(S3)](https://aws.amazon.com/s3/)
+2. Thoughts:
+   - is widely used to store raw files like photos and videos
+
+## Reference
+
+1. [Youtube - Choosing the Best Database in a System Design Interview](https://www.youtube.com/watch?v=cODCpXtPHbQ)
