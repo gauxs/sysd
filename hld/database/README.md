@@ -10,10 +10,12 @@
 
 ### RDBMS systems
 
-1. MySQL, Oracle
+1. MySQL, Oracle - widely used RDBMS
 
-- Features: `multi-source replication` | `strong consistency` | `ACID transaction` | `concurrent` | `durable` | `in-memory capabilities` | `secondary indexing` | `data scheme exist` | `no map-reduce`
+- Features: `multi-source replication` | `strong consistency` | `ACID transaction` | `concurrent` | `durable` | `in-memory capabilities` | `secondary indexing` | `data scheme exist` | `no map-reduce` | `primary database model - rdbms` | `secondary database model - document store & spatial dbms`
 
 ### Key value stores
 
-1. Redis
+1. Redis - in-memory data platform used as a cache, message broker, and database that can be deployed on-premises, across clouds, and hybrid environments
+
+- Features:
