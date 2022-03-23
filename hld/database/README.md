@@ -5,9 +5,15 @@
 3. Durability - making data persistent
 4. Concurrent - concurrent manipulation of data
 5. In-memory capabilities - option to define some or all structure in-memory only
+6. Data scheme - skeleton structure that represents the logical view of the entire database, if structure is not uniform then the database is schema free
+7. Map-reduce - offers an API for user-defined [Map/Reduce](https://www.tutorialspoint.com/hadoop/hadoop_mapreduce.htm) methods
 
 ### RDBMS systems
 
 1. MySQL, Oracle
 
-- Features: `multi-source replication` | `strong consistency` | `ACID transaction` | `concurrent` | `durable` | `in-memory capabilities` | `secondary indexing`
+- Features: `multi-source replication` | `strong consistency` | `ACID transaction` | `concurrent` | `durable` | `in-memory capabilities` | `secondary indexing` | `data scheme exist` | `no map-reduce`
+
+### Key value stores
+
+1. Redis
