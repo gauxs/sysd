@@ -63,21 +63,47 @@ A search-engine database is a type of nonrelational database that is dedicated t
 2. [Elasticsearch - A distributed, RESTful modern search and analytics engine based on Apache Lucene info](https://db-engines.com/en/system/Elasticsearch)
 3. Thoughts:
    - can be used in autofill
+   - text search engine which also supports **fuzzy search**
+   - search engines are not data stores which gives 100% data durability, data could be lost
+   - search engines should not be kept as primary source of truth
 
 ### [Wide-column stores](https://db-engines.com/en/ranking/wide+column+store)
 
 A [wide-column database](https://www.scylladb.com/glossary/wide-column-database/) is a type of NoSQL database in which the names and format of the columns can vary across rows, even within the same table. Wide-column databases are also known as column family databases. Because data is stored in columns, queries for a particular value in a column are very fast, as the entire column can be loaded and searched quickly. Related columns can be modeled as part of the same column family.
 
-1. Common features: `primary database model - wide column store` | `schema free` | `restricted secondary indexing` | `partitioning - sharding` | `selectable replication` | `supports map-reduce` | `eventual consistency` | `no transaction concepts` | `concurrent` | `durable` | `no in-memory capabilities`
+1. Common features: `primary database model - wide column store` | `schema free` | `restricted secondary indexing` | `partitioning - sharding` | `selectable replication` | `no map-reduce` | `no transaction concepts` | `concurrent` | `durable` | `in-memory capabilities`
 2. [Cassandra - wide-column store based on ideas of BigTable and DynamoDB](https://db-engines.com/en/system/Cassandra)
 3. Thoughts:
    - its an AP system with eventual consistency
 
-### File(object) store
+### [Time series stores](https://db-engines.com/en/ranking/time+series+dbms)
+
+A time series database (TSDB) is a database optimized for time-stamped or time series data. Time series data are simply measurements or events that are tracked, monitored, downsampled, and aggregated over time. This could be server metrics, application performance monitoring, network data, sensor data, events, clicks, trades in a market, and many other types of analytics data.
+
+1. Common features: `primary database model - time series` | `schema free` | `no secondary indexing` | `partitioning - sharding` | `selectable replication` | `supports map-reduce` | `eventual consistency` | `no transaction concepts` | `concurrent` | `durable` | `no in-memory capabilities`
+2. [InfluxDB - DBMS for storing time series, events and metrics](https://db-engines.com/en/system/InfluxDBa)
+3. Thoughts:
+   - time series updates generally are not performed randomally
+   - time series updates are done mostly in append only mode and time series database are optimised to perform these append only update operation
+   - bulk read query in ranges
+
+### Blob/File/object store
 
 1. [Amazon simple storage service(S3)](https://aws.amazon.com/s3/)
+2. [Content delivery network](https://www.akamai.com/solutions/content-delivery-network)
+3. Thoughts:
+   - S3 is widely used to store raw files like photos and videos
+   - whereas CDN is used to store blobs near geo location of users to improve performance
+
+### Data warehouse
+
+Efficiently store and process large datasets ranging in size from gigabytes to petabytes of data.
+
+1. [Apache Hadoop](https://aws.amazon.com/emr/details/hadoop/what-is-hadoop/)
 2. Thoughts:
-   - is widely used to store raw files like photos and videos
+   - if we need to perform analytics on the data of the whole company we might need a data warehouse
+   - large database which can store huge amount of data
+   - generally used for offline reporting
 
 ## Reference
 
