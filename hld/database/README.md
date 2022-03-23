@@ -28,8 +28,9 @@
 2. [Amazon DynamoDB vs Redis](https://db-engines.com/en/system/Amazon+DynamoDB%3BRedis)
 
 3. Thoughts:
-   - Both dynamo and redis provides eventual consistency but dynamo provides immediate consistency for read operations and redis can provide strong consistency with redis raft
+   - both dynamo and redis provides eventual consistency but dynamo provides immediate consistency for read operations and redis can provide strong consistency with redis raft
    - dynamo has no in-memory capabilities
+   - dynamo follows ACID properties
    - both are schema free
 
 ### [Document store](https://db-engines.com/en/ranking/document+store)
@@ -38,7 +39,34 @@ Document-oriented databases are inherently a subclass of the key-value store, an
 
 The central concept of a document-oriented database is the notion of a document. While each document-oriented database implementation differs on the details of this definition, in general, they all assume documents encapsulate and encode data (or information) in some standard format or encoding. Encodings in use include XML, YAML, JSON, as well as binary forms like BSON.
 
-1. Common features: `primary database model - document store`
+#### Keys
+
+Documents are addressed in the database via a unique key that represents that document. This key is a simple identifier (or ID), typically a string, a URI, or a path. The key can be used to retrieve the document from the database. Typically the database retains an index on the key to speed up document retrieval, and in some cases the key is required to create or insert the document into the database.
+
+1. Common features: `primary database model - document store` | `schema free` | `secondary indexing` | `partitioning - sharding` | `source-replica replication` | `concurrent` | `durable` | `eventual consistency`
 2. [Amazon DynamoDB vs MongoDB](https://db-engines.com/en/system/Amazon+DynamoDB%3BMongoDB)
 3. Thoughts:
+
    - MongoDB uses asynchronous primary/backup replication
+   - dynamoDB doesn't support map reduce
+   - dynamo follows ACID properties where as mongo follows multi-document ACID transactions with snapshot isolation
+   - mongo has in-memory capabilities
+   - both dynamo and mogo provides eventual consistency but dynamo provides immediate consistency for read operations and mongo provides for write operations
+
+### [Search Engines](https://db-engines.com/en/ranking/search+engine)
+
+A search-engine database is a type of nonrelational database that is dedicated to the search of data content. Search-engine databases use indexes to categorize the similar characteristics among data and facilitate search capability. Search-engine databases are optimized for dealing with data that may be long, semistructured, or unstructured, and they typically offer specialized methods such as full-text search, complex search expressions, and ranking of search results.
+
+1. Common features: `primary database model - search engine` | `schema free` | `secondary indexing` | `partitioning - sharding` | `eventual consistency` | `no transaction concept` | `concurrent` | `durable`
+2. [Elasticsearch - A distributed, RESTful modern search and analytics engine based on Apache Lucene info](https://db-engines.com/en/system/Elasticsearch)
+3. Thoughts:
+   - can be used in autofill
+
+### [Wide-column stores](https://db-engines.com/en/ranking/wide+column+store)
+
+A [wide-column database](https://www.scylladb.com/glossary/wide-column-database/) is a type of NoSQL database in which the names and format of the columns can vary across rows, even within the same table. Wide-column databases are also known as column family databases. Because data is stored in columns, queries for a particular value in a column are very fast, as the entire column can be loaded and searched quickly. Related columns can be modeled as part of the same column family.
+
+1. Common features: `primary database model - wide column store` | `schema free` | `restricted secondary indexing` | `partitioning - sharding` | `selectable replication` | `supports map-reduce` | `eventual consistency` | `no transaction concepts` | `concurrent` | `durable` | `no in-memory capabilities`
+2. [Cassandra](https://db-engines.com/en/system/Cassandra)
+3. Thoughts:
+   - its an AP system
