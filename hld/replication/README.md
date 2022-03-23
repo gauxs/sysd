@@ -1,16 +1,20 @@
 # Replication
+
 ### Why replication?
+
 The manner in which a data set is distributed between multiple nodes is very important. In order for any computation to happen, we need to locate the data and then act on it.
 
 There are two basic techniques that can be applied to a data set. It can be split over multiple nodes (partitioning) to allow for more parallel processing. It can also be copied or cached on different nodes to reduce the distance between the client and the server and for greater fault tolerance (replication).
 
 Caching is most common example of replication. Caching is used to leveage on following attribute of the system:
+
 1. Hardware - storing replica on more performant hardware(e.g. RAM) improves latency.
 2. Disance - storing replica near users(e.g. CDN) thus reducing distance improves latency.
 
 <img src="https://github.com/gauxs/sysd/blob/master/media/image/part-repl.png?raw=true" width="500" height="400">
 
 ### What is replication?
+
 Replication is making copies of the same data on multiple machines; this allows more servers to take part in the computation. Replication - copying or reproducing something - is the primary way in which we can fight latency.
 
 1. Replication improves performance by making additional computing power and bandwidth applicable to a new copy of the data
@@ -26,5 +30,15 @@ The choice of a consistency model is crucial: a good consistency model provides 
 
 Only one consistency model for replication - strong consistency - allows you to program as-if the underlying data was not replicated. Other consistency models expose some internals of the replication to the programmer. However, weaker consistency models can provide lower latency and higher availability - and are not necessarily harder to understand, just different.
 
+### Replication algorithms
+
+The replication algorithms that maintain single-copy consistency(CA and CP systems) include:
+
+1. 1n messages (asynchronous primary/backup)
+2. 2n messages (synchronous primary/backup)
+3. 4n messages (2-phase commit, Multi-Paxos)
+4. 6n messages (3-phase commit, Paxos with repeated leader election)
+
 ## Reference
+
 1. [Awesome book on basics of system design](http://book.mixu.net/distsys/single-page.html)
