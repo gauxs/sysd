@@ -12,9 +12,9 @@ These are part of system design questions and requires actual implementation. So
 
 ## High Level Design
 
-High level design is also known as system design. System Design is the process of designing the architecture, components, and interfaces for a system so that it meets the end-user requirements. I have tried to document most common topics, there are more detailed resources for system, some of which mentioned below:
+High level design is also known as system design. System Design is the process of designing the architecture, components, and interfaces for a system so that it meets the end-user requirements. I have tried to document most common topics but there are more detailed resources available, some of which are:
 
-1. [An awesome book on basics of system design](http://book.mixu.net/distsys/single-page.html)
+1. [An awesome book by mikito takada on basics of system design](http://book.mixu.net/distsys/single-page.html)
 2. [System Design Primer - A github repo on system design](https://github.com/donnemartin/system-design-primer)
 
 [^1]: Distributed programming is the art of solving the same problem that you can solve on a single computer using multiple computers.
