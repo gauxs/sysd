@@ -16,8 +16,8 @@ Following are some of the learnings for LLD design questions:
 
 High level design is also known as system design. System Design is the process of designing the architecture, components, and interfaces for a system so that it meets the end-user requirements. I have tried to document most common topics but there are more detailed resources available, some of which are:
 
-1. [An awesome book by mikito takada on basics of system design](http://book.mixu.net/distsys/single-page.html)
-2. [System Design Primer - A github repo on system design](https://github.com/donnemartin/system-design-primer)
+1. [An awesome book by mikito takada on basics of system design](http://book.mixu.net/distsys/single-page.html) - notice how the author views different component of distributed system, understanding this will give a broader perspective.
+2. [System Design Primer - A github repo on system design](https://github.com/donnemartin/system-design-primer) - this is filled with a lot of content and it's not expected to finish this in one sitting.
 3. [Highscalability](http://highscalability.com/)
 4. [Amazon builders library](https://aws.amazon.com/builders-library/?cards-body.sort-by=item.additionalFields.sortDate&cards-body.sort-order=desc&awsf.filter-content-category=*all&awsf.filter-content-type=*all&awsf.filter-content-level=*all) and [AWS architecture center](https://aws.amazon.com/architecture/?intClick=dev-center-2021_main)
 5. [Handwritten notes on system design](https://github.com/gauxs/sysd/blob/master/resource/system_design_basics_handbook.pdf)
