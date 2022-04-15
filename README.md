@@ -16,5 +16,6 @@ High level design is also known as system design. System Design is the process o
 
 1. [An awesome book by mikito takada on basics of system design](http://book.mixu.net/distsys/single-page.html)
 2. [System Design Primer - A github repo on system design](https://github.com/donnemartin/system-design-primer)
+3. [Highscalability](http://highscalability.com/)
 
 [^1]: Distributed programming is the art of solving the same problem that you can solve on a single computer using multiple computers.
