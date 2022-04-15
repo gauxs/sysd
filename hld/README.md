@@ -14,8 +14,8 @@ Performance is characterized by the amount of useful work accomplished by a comp
 
 ### Availability
 
-Availability the proportion of time a system is in a functioning condition. If a user cannot access the system, it is said to be unavailable.
+Availability is the proportion of time a system is in a functioning condition. If a user cannot access the system, it is said to be unavailable.
 
 ### Fault tolerance
 
-Fault tolerance ability of a system to behave in a well-defined manner once faults occur.
+Fault tolerance is the ability of a system to behave in a well-defined manner once faults occur.
