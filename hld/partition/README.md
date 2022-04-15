@@ -17,4 +17,4 @@ Partitioning is also very much application-specific, so it is hard to say much a
 Partitioning is mostly about defining your partitions based on what you think the primary access pattern will be, and dealing with the limitations that come from having independent partitions (e.g. inefficient access across partitions, different rate of growth etc.).
 
 ## Reference
-1. [Awesome book on basics of system design](http://book.mixu.net/distsys/single-page.html)
+1. [An awesome book by mikito takada on basics of system design](http://book.mixu.net/distsys/single-page.html)
