@@ -79,6 +79,7 @@ A [wide-column database](https://www.scylladb.com/glossary/wide-column-database/
 3. Thoughts:
    - its an AP system with eventual consistency
    - use wide-column store DB if we have ever increasing data and finite number of queries needs to be built on the data. Example: location records of uber drivers
+   - wide column stores offer high availability and high scalability. They are often used for very large data sets.
 
 ### [Time series stores](https://db-engines.com/en/ranking/time+series+dbms)
 
