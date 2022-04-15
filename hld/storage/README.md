@@ -56,6 +56,7 @@ Documents are addressed in the database via a unique key that represents that do
    - mongo has in-memory capabilities
    - both dynamo and mogo provides eventual consistency but dynamo provides immediate consistency for read operations and mongo provides for write operations
    - use document store DB if we have lot of structures in the data and lot of queries needs to be built on the data we can use this. Example: catalog system of amazon
+   - inshort, MongoDB and CouchDB provide a SQL-like language to perform complex queries. DynamoDB supports both key-values and documents. Document stores provide high flexibility and are often used for working with occasionally changing data.
 
 ### [Search Engines](https://db-engines.com/en/ranking/search+engine)
 
