@@ -41,4 +41,4 @@ The replication algorithms that maintain single-copy consistency(CA and CP syste
 
 ## Reference
 
-1. [Awesome book on basics of system design](http://book.mixu.net/distsys/single-page.html)
+1. [An awesome book by mikito takada on basics of system design](http://book.mixu.net/distsys/single-page.html)
