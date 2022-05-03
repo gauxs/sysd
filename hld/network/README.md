@@ -27,17 +27,19 @@ HTTP is unidirectional where the client sends the request and the server sends t
 - [HTTP RFC standard - rfc2616](https://datatracker.ietf.org/doc/html/rfc2616) 
 
  
-PUT Vs POST
-PUT vs. POST 
-MIME Types - rfc6838 
-A media type (also known as a Multipurpose Internet Mail Extensions or MIME type) is a standard that indicates the nature and format of a document, file, or assortment of bytes. 
-MIME types (IANA media types) - HTTP 
-CORS
+### PUT Vs POST
+- [PUT vs. POST](https://dzone.com/articles/put-vs-post)
+ 
+### MIME Types - rfc6838 
+A media type (also known as a Multipurpose Internet Mail Extensions or MIME type) is a standard that indicates the nature and format of a document, file, or assortment of bytes. (MIME types (IANA media types))[https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types] 
+
+### CORS
 Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any other origins (domain, scheme, or port) than its own from which a browser should permit loading of resources. 
-CORS also relies on a mechanism by which browsers make a “preflight” request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request.
-In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.
+
+CORS also relies on a mechanism by which browsers make a “preflight” request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.
+
 Reference - Cross-Origin Resource Sharing (CORS) - HTTP 
-HTTP Cookies
+### HTTP Cookies
 An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser. The browser may store it and send it back with later requests to the same server. Typically, it's used to tell if two requests came from the same browser — keeping a user logged-in, for example. It remembers stateful information for the stateless HTTP protocol.
 Cookie is just a http header, just like Authorization or Content-Type
 used in session management, personalization, tracking
