@@ -30,57 +30,63 @@ HTTP is unidirectional where the client sends the request and the server sends t
 ### PUT Vs POST
 - [PUT vs. POST](https://dzone.com/articles/put-vs-post)
  
-### MIME Types - rfc6838 
-A media type (also known as a Multipurpose Internet Mail Extensions or MIME type) is a standard that indicates the nature and format of a document, file, or assortment of bytes. (MIME types (IANA media types))[https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types] 
+### MIME Types
+A media type (also known as a Multipurpose Internet Mail Extensions or MIME type) is a standard that indicates the nature and format of a document, file, or assortment of bytes. [Media Type Specifications and Registration Procedures - rfc6838](https://datatracker.ietf.org/doc/html/rfc6838)
 
 ### CORS
 Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any other origins (domain, scheme, or port) than its own from which a browser should permit loading of resources. 
 
 CORS also relies on a mechanism by which browsers make a “preflight” request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.
 
-Reference - Cross-Origin Resource Sharing (CORS) - HTTP 
 ### HTTP Cookies
 An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser. The browser may store it and send it back with later requests to the same server. Typically, it's used to tell if two requests came from the same browser — keeping a user logged-in, for example. It remembers stateful information for the stateless HTTP protocol.
-Cookie is just a http header, just like Authorization or Content-Type
-used in session management, personalization, tracking
-consists of name, value, and (optional) attributes / flags
-set with Set-Cookie by server, appended with Cookie by browser
+
+Cookie is just a http header, just like Authorization or Content-Type used in session management, personalization, tracking consists of name, value, and (optional) attributes / flags set with Set-Cookie by server, appended with Cookie by browser
+```
 HTTP/1.1 200 OK
 Content-type: text/html
 Set-Cookie: SESS_ID=9vKnWqiZvuvVsIV1zmzJQeYUgINqXYeS; Domain=example.com; Path=/
-Security
+```
+
+### Security
 signed (HMAC) with a secret to mitigate tampering
 rarely encrypted (AES) to protected from being read
 no security concern if read by 3rd party
 carries no meaningful data (random string)
 even if encrypted, still a 1-1 match
 encoded (URL) - not for security, but compat
-Attributes
+
+### Attributes
 Domain and Path (can only be used on a given site & route)
 Expiration (can only be used until expiry)
 when omitted, becomes a session cookie
 gets deleted when browser is closed
-Flags
+
+### Flags
 HttpOnly (cannot be read with JS on the client-side)
 Secure (can only sent over encrypted HTTPS channel), and
 SameSite (can only be sent from the same domain, i.e. no CORS sharing)
-CSRF
+
+### CSRF
 unauthorized actions on behalf of the authenticated user
 mitigated with a CSRF token (e.g. sent in a separate X-CSRF-TOKEN cookie) 
 
-Read more at Using HTTP cookies - HTTP especially Define where cookies are sent  and Security part.
+Read more at [Using HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) especially **Define where cookies are sent** and **Security** sections.
 
 
 # WebSockets
 When a client sends HTTP request to the server, a TCP connection is open between the client and server and after getting the response the TCP connection gets terminated, each HTTP request open separate TCP connection to the server, this is non-optimal and thus websockets protocol can be used.
 WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication, unlike HTTP it starts from ws:// or wss://.
-It is a stateful protocol, which means the connection between client and server will keep alive until it is terminated by either party (client or server). After closing the connection by either of the client and server, the connection is terminated from both ends.
-The protocol consists of an opening handshake followed by basic message framing, layered over TCP. Thus websocket works on top of TCP and is comparable to HTTP.
-Applications of websocket:
-Real-time web application
-Gaming application
-Chat application
+
+It is a stateful protocol, which means the connection between client and server will keep alive until it is terminated by either party (client or server). After closing the connection by either of the client and server, the connection is terminated from both ends. The protocol consists of an opening handshake followed by basic message framing, layered over TCP. Thus websocket works on top of TCP and is comparable to HTTP.
+
+### Applications of websocket
+- Real-time web application
+- Gaming application
+- Chat application
 
 ## References
 1. [Khanacademy - Transmission control protocol](https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:transporting-packets/a/transmission-control-protocol--tcp)
 2. [Mozilla - An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+3. [MIME types -IANA media types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+4. [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
