@@ -1,7 +1,7 @@
 # Ports
 There are 65,536 ports. The ports from 0 to 1023 are considered **system ports** and are generally where you will find common services like DNS, SMTP and HTTP. Higher number ports are considered **dynamic** and will be assigned on an as needed basis (or are assigned by the program needing network services).
 
-## Difference between socket and ports?
+### Difference between socket and ports?
 Both Socket and Port are the terms used in Transport Layer.
 A port is a logical construct assigned to network processes so that they can be identified within the system. 
 A socket is a combination of port and IP address.
@@ -11,7 +11,6 @@ An incoming packet has a port number which is used to identify the process that 
 The Transmission Control Protocol (TCP) is a transport protocol that is used on top of IP to ensure reliable transmission of packets. TCP includes mechanisms to solve many of the problems that arise from packet-based messaging, such as lost packets, out of order packets, duplicate packets, and corrupted packets. 
 
 Since TCP is the protocol used most commonly on top of IP, the Internet protocol stack is sometimes referred to as TCP/IP. TCP guarantees the delivery of data and packets in the same order as they were sent. Either computer can close the connection when they no longer want to send or receive data.
-Reference: Transmission Control Protocol (TCP) (article) 
 
 
 ## Hypertext Transfer Protocol
@@ -80,4 +79,4 @@ Gaming application
 Chat application
 
 ## References
-- [Khanacademy - TCP](https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:transporting-packets/a/transmission-control-protocol--tcp)
+1. [Khanacademy - Transmission control protocol](https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:transporting-packets/a/transmission-control-protocol--tcp)
