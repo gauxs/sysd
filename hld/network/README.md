@@ -16,16 +16,17 @@ Since TCP is the protocol used most commonly on top of IP, the Internet protocol
 # Hypertext Transfer Protocol
 HTTP is unidirectional where the client sends the request and the server sends the response. Let’s take an example when a user sends a request to the server this request goes in the form of HTTP or HTTPS, after receiving a request server send the response to the client, each request is associated with a corresponding response, after sending the response the connection gets closed, each HTTP or HTTPS request establish the new connection to the server every time and after getting the response the connection gets terminated by itself. 
 
-HTTP is stateless protocol runs on the top of TCP which is a connection-oriented protocol that guarantees the delivery of data packet transfer using the three-way handshaking methods and re-transmit the lost packets. HTTP can run on the top of any reliable connection-oriented protocol such as TCP, SCTP. 
+- HTTP is stateless protocol runs on the top of TCP which is a connection-oriented protocol that guarantees the delivery of data packet transfer using the three-way handshaking methods and re-transmit the lost packets. HTTP can run on the top of any reliable connection-oriented protocol such as TCP, SCTP. 
 
-When a client sends HTTP request to the server, a TCP connection is open between the client and server and after getting the response the TCP connection gets terminated, each HTTP request open separate TCP connection to the server, for e.g. if client send 10 requests to the server the 10 separate TCP connection will be opened and get closed after getting the response/fallback. 
+- When a client sends HTTP request to the server, a TCP connection is open between the client and server and after getting the response the TCP connection gets terminated, each HTTP request open separate TCP connection to the server, for e.g. if client send 10 requests to the server the 10 separate TCP connection will be opened and get closed after getting the response/fallback. 
 
-HTTP is a protocol which allows the fetching of resources, such as HTML documents. Designed in the early 1990s, HTTP is an extensible protocol which has evolved over time. It is an application layer protocol that is sent over TCP, or over a TLS-encrypted TCP connection, though any reliable transport protocol could theoretically be used.
+- HTTP is a protocol which allows the fetching of resources, such as HTML documents. Designed in the early 1990s, HTTP is an extensible protocol which has evolved over time. It is an application layer protocol that is sent over TCP, or over a TLS-encrypted TCP connection, though any reliable transport protocol could theoretically be used.
 
-Due to its extensibility, it is used to not only fetch hypertext documents, but also images and videos or to post content to servers, like with HTML form results.
+- Due to its extensibility, it is used to not only fetch hypertext documents, but also images and videos or to post content to servers, like with HTML form results.
 
-Good article on http - An overview of HTTP - HTTP
-HTTP RFC standard - rfc2616 
+- [HTTP RFC standard - rfc2616](https://datatracker.ietf.org/doc/html/rfc2616) 
+
+ 
 PUT Vs POST
 PUT vs. POST 
 MIME Types - rfc6838 
@@ -68,7 +69,7 @@ mitigated with a CSRF token (e.g. sent in a separate X-CSRF-TOKEN cookie)
 Read more at Using HTTP cookies - HTTP especially Define where cookies are sent  and Security part.
 
 
-WebSockets
+# WebSockets
 When a client sends HTTP request to the server, a TCP connection is open between the client and server and after getting the response the TCP connection gets terminated, each HTTP request open separate TCP connection to the server, this is non-optimal and thus websockets protocol can be used.
 WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication, unlike HTTP it starts from ws:// or wss://.
 It is a stateful protocol, which means the connection between client and server will keep alive until it is terminated by either party (client or server). After closing the connection by either of the client and server, the connection is terminated from both ends.
@@ -80,3 +81,4 @@ Chat application
 
 ## References
 1. [Khanacademy - Transmission control protocol](https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:transporting-packets/a/transmission-control-protocol--tcp)
+2. [Mozilla - An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
