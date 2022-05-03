@@ -13,17 +13,17 @@ The Transmission Control Protocol (TCP) is a transport protocol that is used on 
 Since TCP is the protocol used most commonly on top of IP, the Internet protocol stack is sometimes referred to as TCP/IP. TCP guarantees the delivery of data and packets in the same order as they were sent. Either computer can close the connection when they no longer want to send or receive data.
 
 
-## Hypertext Transfer Protocol
-What is HTTP?
-HTTP is unidirectional where the client sends the request and the server sends the response.
-Let’s take an example when a user sends a request to the server this request goes in the form of HTTP or HTTPS, after receiving a request server send the response to the client, each request is associated with a corresponding response, after sending the response the connection gets closed, each HTTP or HTTPS request establish the new connection to the server every time and after getting the response the connection gets terminated by itself. 
-HTTP is stateless protocol runs on the top of TCP which is a connection-oriented protocol that guarantees the delivery of data packet transfer using the three-way handshaking methods and re-transmit the lost packets. 
-HTTP can run on the top of any reliable connection-oriented protocol such as TCP, SCTP. 
-When a client sends HTTP request to the server, a TCP connection is open between the client and server and after getting the response the TCP connection gets terminated, each HTTP request open separate TCP connection to the server, for e.g. if client send 10 requests to the server the 10 separate TCP connection will be opened. and get closed after getting the response/fallback. 
-HTTP is a protocol which allows the fetching of resources, such as HTML documents.
-Designed in the early 1990s, HTTP is an extensible protocol which has evolved over time.
-It is an application layer protocol that is sent over TCP, or over a TLS-encrypted TCP connection, though any reliable transport protocol could theoretically be used.
+# Hypertext Transfer Protocol
+HTTP is unidirectional where the client sends the request and the server sends the response. Let’s take an example when a user sends a request to the server this request goes in the form of HTTP or HTTPS, after receiving a request server send the response to the client, each request is associated with a corresponding response, after sending the response the connection gets closed, each HTTP or HTTPS request establish the new connection to the server every time and after getting the response the connection gets terminated by itself. 
+
+HTTP is stateless protocol runs on the top of TCP which is a connection-oriented protocol that guarantees the delivery of data packet transfer using the three-way handshaking methods and re-transmit the lost packets. HTTP can run on the top of any reliable connection-oriented protocol such as TCP, SCTP. 
+
+When a client sends HTTP request to the server, a TCP connection is open between the client and server and after getting the response the TCP connection gets terminated, each HTTP request open separate TCP connection to the server, for e.g. if client send 10 requests to the server the 10 separate TCP connection will be opened and get closed after getting the response/fallback. 
+
+HTTP is a protocol which allows the fetching of resources, such as HTML documents. Designed in the early 1990s, HTTP is an extensible protocol which has evolved over time. It is an application layer protocol that is sent over TCP, or over a TLS-encrypted TCP connection, though any reliable transport protocol could theoretically be used.
+
 Due to its extensibility, it is used to not only fetch hypertext documents, but also images and videos or to post content to servers, like with HTML form results.
+
 Good article on http - An overview of HTTP - HTTP
 HTTP RFC standard - rfc2616 
 PUT Vs POST
