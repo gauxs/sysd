@@ -5,7 +5,6 @@ Three concerns that are important in most software systems:
 3. **Maintainability**: Operability, simplicity & evolvability. Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new usecases), and they should all be able to work on it productively.
 
 ### Performance
-
 Performance is characterized by the amount of useful work accomplished by a computer system compared to the time and resources used. Depending on the context, this may involve achieving one or more of the following:
 
 1. Short response time/low latency for a given piece of work
@@ -13,7 +12,6 @@ Performance is characterized by the amount of useful work accomplished by a comp
 3. Low utilization of computing resource(s)
 
 ### Availability
-
 Availability is the proportion of time a system is in a functioning condition. If a user cannot access the system, it is said to be unavailable.
 
 ### Fault tolerant
