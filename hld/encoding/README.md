@@ -5,5 +5,12 @@ Programs usually work with data in (at least) two different representations:
 
 Thus, we need some kind of translation between the two representations. The translation from the in-memory representation to a byte sequence is called encoding (also known as serialization or marshalling), and the reverse is called decoding (parsing, deserialization, unmarshalling).
 
+### Types of encoding formats
+1. Language specific formats
+   - Something
+2. JSON, XML and Binary variants
+3. Thrift and Protocol buffers
+4. Avro
+
 ## References
 1. [DDIA Chapter-4: Encoding & Evolution](https://www.amazon.in/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/9352135245/ref=sr_1_2?adgrpid=58563655643&ext_vrnc=hi&gclid=Cj0KCQjwpcOTBhCZARIsAEAYLuUSfHwV3-7i3tvemw-oCjK8Of4E6Tv0Ug8f7EIFmMwTIZJGEspx3_YaArP2EALw_wcB&hvadid=294119043831&hvdev=c&hvlocphy=9061996&hvnetw=g&hvqmt=b&hvrand=17260569075925717915&hvtargid=kwd-340293264171&hydadcr=25367_1900683&keywords=data+intensive+application&qid=1651596791&sr=8-2)
