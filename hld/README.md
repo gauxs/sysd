@@ -19,6 +19,6 @@ The things that can go wrong are called faults, and systems that anticipate faul
 
 Note that a fault is not the same as a failure. A fault is usually defined as one component of the system deviating from its spec, whereas a failure is when the system as a whole stops providing the required service to the user. It is impossible to reduce the probability of a fault to zero; therefore it is usually best to design fault-tolerance mechanisms that prevent faults from causing failures.
 
-### Backward vs Forward compatibility
+### Backward vs forward compatibility
 - Backward compatibility - Newer code can read data that was written by older code
 - Forward compatibility - Older code can read data that was written by newer code
