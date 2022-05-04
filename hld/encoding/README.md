@@ -24,7 +24,7 @@ Unicode, formally the Unicode Standard, is an information technology standard fo
 
 The Unicode standard defines Unicode Transformation Formats (UTF): UTF-8, UTF-16, and UTF-32, and several other encodings. The most commonly used encodings are UTF-8, UTF-16, and the obsolete UCS-2.
 
-UTF-8, the dominant encoding on the World Wide Web (used in over 95% of websites as of 2020, and up to 100% for some languages)[4] and on most Unix-like operating systems, uses one byte[note 1] (8 bits) for the first 128 code points, and up to 4 bytes for other characters.[5] The first 128 Unicode code points represent the ASCII characters, which means that any ASCII text is also a UTF-8 text.
+UTF-8, the dominant encoding on the World Wide Web (used in over 95% of websites as of 2020, and up to 100% for some languages) and on most Unix-like operating systems, uses one byte(8 bits) for the first 128 code points, and up to 4 bytes for other characters. The first 128 Unicode code points represent the ASCII characters, which means that any ASCII text is also a UTF-8 text.
 
 ### Base-64 encoding
 
