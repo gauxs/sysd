@@ -26,5 +26,10 @@ The Unicode standard defines Unicode Transformation Formats (UTF): UTF-8, UTF-16
 
 UTF-8, the dominant encoding on the World Wide Web (used in over 95% of websites as of 2020, and up to 100% for some languages)[4] and on most Unix-like operating systems, uses one byte[note 1] (8 bits) for the first 128 code points, and up to 4 bytes for other characters.[5] The first 128 Unicode code points represent the ASCII characters, which means that any ASCII text is also a UTF-8 text.
 
+### Base-64 encoding
+
+
 ## References
 1. [DDIA Chapter-4: Encoding & Evolution](https://www.amazon.in/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/9352135245/ref=sr_1_2?adgrpid=58563655643&ext_vrnc=hi&gclid=Cj0KCQjwpcOTBhCZARIsAEAYLuUSfHwV3-7i3tvemw-oCjK8Of4E6Tv0Ug8f7EIFmMwTIZJGEspx3_YaArP2EALw_wcB&hvadid=294119043831&hvdev=c&hvlocphy=9061996&hvnetw=g&hvqmt=b&hvrand=17260569075925717915&hvtargid=kwd-340293264171&hydadcr=25367_1900683&keywords=data+intensive+application&qid=1651596791&sr=8-2)
+2. [Stackoverflow - What is base-64 encoding](https://stackoverflow.com/questions/201479/what-is-base-64-encoding-used-for/201510#201510)
+3. [Medium - What is base-64 encoding](https://levelup.gitconnected.com/what-is-base64-encoding-4b5ed1eb58a4)
