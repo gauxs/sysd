@@ -15,6 +15,8 @@ Encoding involves the use of a code to change original data into a form that can
 4. Avro
 
 ## Character encoding
+Character encoding is the process of representing individual characters using a corresponding encoding system made up of other symbols and types of data. Character coding is used for many different purposes. Character encoding is also known as a character set or character map.
+
 #### American Standard Code for Information Interchange (ASCII)
 The type of code used for converting characters is known as American Standard Code for Information Interchange (ASCII), the most commonly used encoding scheme for files that contain text. 
 
