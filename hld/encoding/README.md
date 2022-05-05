@@ -7,26 +7,27 @@ Thus, we need some kind of translation between the two representations. The tran
 
 Encoding involves the use of a code to change original data into a form that can be used by an external process.
 
-### Types of encoding formats
+#### Types of encoding formats
 1. Language specific formats
    - python's pickle
 2. JSON, XML and Binary variants
 3. Thrift and Protocol buffers
 4. Avro
 
-### American Standard Code for Information Interchange (ASCII)
+## Character encoding
+#### American Standard Code for Information Interchange (ASCII)
 The type of code used for converting characters is known as American Standard Code for Information Interchange (ASCII), the most commonly used encoding scheme for files that contain text. 
 
 The standard ASCII scheme has only zero to 127 character positions; 128 through 255 are undefined. The problem of undefined characters is solved by Unicode encoding, which assigns a number to every character used worldwide. Other types of codes include BinHex, Uuencode (UNIX to UNIX encoding) and Multipurpose Internet Mail Extensions (MIME).
 
-### Unicode
+#### Unicode
 Unicode, formally the Unicode Standard, is an information technology standard for the consistent encoding, representation, and handling of text expressed in most of the world's writing systems. 
 
 The Unicode standard defines Unicode Transformation Formats (UTF): UTF-8, UTF-16, and UTF-32, and several other encodings. The most commonly used encodings are UTF-8, UTF-16, and the obsolete UCS-2.
 
 UTF-8, the dominant encoding on the World Wide Web (used in over 95% of websites as of 2020, and up to 100% for some languages) and on most Unix-like operating systems, uses one byte(8 bits) for the first 128 code points, and up to 4 bytes for other characters. The first 128 Unicode code points represent the ASCII characters, which means that any ASCII text is also a UTF-8 text.
 
-### Base-64 encoding
+#### Base-64 encoding
 
 
 ## References
