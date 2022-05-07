@@ -29,8 +29,6 @@ Character encoding is the process of representing individual characters using a 
 
    - **UTF-8**, the dominant encoding on the World Wide Web (used in over 95% of websites as of 2020, and up to 100% for some languages) and on most Unix-like operating systems, uses one byte(8 bits) for the first 128 code points, and up to 4 bytes for other characters. The first 128 Unicode code points represent the ASCII characters, which means that any ASCII text is also a UTF-8 text.
 
-**Note:** An **escape sequence** in a programming language is a sequence of characters that doesn't represent itself when used inside string literal or character. It is composed of two or more characters starting with backslash \. For example: \n represents new line.
-
 3. **Base-64 encoding** - The base64 is a binary to a text encoding scheme that represents binary data in an ASCII string format. base64 is designed to carry data stored in binary format across the channels. It takes any form of data and transforms it into a long string of plain text. The steps followed by the base64 algorithm are as follow:
 
 - count the number of characters in a String
@@ -41,9 +39,11 @@ Character encoding is the process of representing individual characters using a 
 - using the base64 Index Table, the decimals will be again converted to a string according to the table format
 - finally, we will get the encoded version of our input string.
 
-**Note**: We encode text using UTF-8 to binary and then binary to base-64 text via Base-64 encoding. When you have some binary data that you want to ship across a network, you generally don't do it by just streaming the bits and bytes over the wire in a raw format. Why? because some media are made for streaming text. You never know -- some protocols may interpret your binary data as control characters (like a modem), or your binary data could be screwed up because the underlying protocol might think that you've entered a special character combination (like how FTP translates line endings). So to get around this, people encode the binary data into characters. Base64 is one of these types of encodings.
+**Note I**: An **escape sequence** in a programming language is a sequence of characters that doesn't represent itself when used inside string literal or character. It is composed of two or more characters starting with backslash \. For example: \n represents new line.
 
-**Note**: We can send the text data directly over the network thus removing UTF-8 and Base-64 but this won't be compatible with some of the existing system like SMTP. Base64 is also widely used for sending e-mail attachments. This is required because SMTP—in its original form—was designed to transport 7-bit ASCII characters only.
+**Note II**: We encode text using UTF-8 to binary and then binary to base-64 text via Base-64 encoding. When you have some binary data that you want to ship across a network, you generally don't do it by just streaming the bits and bytes over the wire in a raw format. Why? because some media are made for streaming text. You never know -- some protocols may interpret your binary data as control characters (like a modem), or your binary data could be screwed up because the underlying protocol might think that you've entered a special character combination (like how FTP translates line endings). So to get around this, people encode the binary data into characters. Base64 is one of these types of encodings.
+
+**Note III**: We can send the text data directly over the network thus removing UTF-8 and Base-64 but this won't be compatible with some of the existing system like SMTP. Base64 is also widely used for sending e-mail attachments. This is required because SMTP—in its original form—was designed to transport 7-bit ASCII characters only.
 
 ## References
 
