@@ -113,6 +113,16 @@ Multiple data models with dedicated engines
   - Real-time data processing
   - Reliable stream and events processing
 
+## Internals
+
+### Memory
+
+When you set a database’s memory limit, you define the maximum size the database can reach in the cluster, **across all database replicas and shards**. Example: Create a database and Set the memory limit to 6 GB. Enable database clustering and configure the database to have three shards. Enable database replication in order to ensure high-availability.
+
+The cluster creates **6 shards** in total - three primary shards and three replica shards. Each of these shards can have a different size depending on the amount of data stored in it, as long as the total size across all master shards does not exceed 3 GB. In this case, the maximum dataset size you can store in the database is 3 GB.
+
+### Eviction Policy
+
 ## References
 
 1. [Redis Advantages](https://redis.com/redis-enterprise/advantages/)
