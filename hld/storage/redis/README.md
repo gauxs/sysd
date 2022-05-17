@@ -114,9 +114,20 @@ Multiple data models with dedicated engines
   - Reliable stream and events processing
 
 ## Internals
+Open source Redis is a **single-threaded** process to provide speed and simplicity. A single Redis process is bound by the CPU core that it is running on and available memory on the server.
+
+A database cluster is a set of Redis processes where **each process** manages a **subset** of the database keyspace. In an redis cluster, the keyspace is partitioned into database shards. At any moment a shard resides on a single node and is managed by that node.
+
+Each node in a Redis database cluster can manage multiple shards. The key space in the shards is divided into hash slots. The slot of a key is determined by a hash of the key name or part of the key name.
+
+Database clustering is transparent to the Redis client that connects to the database. The Redis client accesses the database through a single endpoint that automatically routes all operations to the relevant shards. You can connect an application to a single Redis process or a clustered database without any difference in the application logic.
+
+
 1. Node - 
 2. Cluser - 
 3. Shard - Redis process that is part of the Redis clustered database.
+4. Tag or Hash Tag - A part of the key that is used in the hash calculation.
+5. Slot or Hash Slot - The result of the hash calculation.
 
 
 ### Sructure
