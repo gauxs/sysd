@@ -114,11 +114,13 @@ Multiple data models with dedicated engines
   - Reliable stream and events processing
 
 ## Internals
-1. Open source redis is a single threaded process
-2. To remove this limitation we can run multiple redis instance on multipe machine like a **cluser**. 
-3. Shard - Redis process that is part of the Redis clustered database.
-4. Tag or Hash Tag - A part of the key that is used in the hash calculation.
-5. Slot or Hash Slot - The result of the hash calculation.
+1. open source redis is a single threaded process and is bound by the CPU core that it is running on and available memory on the server
+2. to remove this limitation we can run multiple redis instance on multipe machine like a **cluser** named Redis Enterprise Software (RS) cluster
+3. a redis database can be deployed on multiple machines, but this is abstracted from client/application point of view. An application accessing its database will have its database distributed between multiple redis processess(master shards)
+5. shard - redis process that is part of the Redis clustered database
+6. a single machine or node can run multiple redis instance i.e. shards
+7. Tag or Hash Tag - A part of the key that is used in the hash calculation.
+8. Slot or Hash Slot - The result of the hash calculation.
 
 Open source Redis is a **single-threaded** process to provide speed and simplicity. A single Redis process is bound by the CPU core that it is running on and available memory on the server.
 
