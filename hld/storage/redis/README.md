@@ -114,6 +114,10 @@ Multiple data models with dedicated engines
   - Reliable stream and events processing
 
 ## Internals
+1. Node - 
+2. Cluser - 
+3. Shard - Redis process that is part of the Redis clustered database.
+
 
 ### Sructure
 Cluster is made up of nodes that are deployed within a data center or stretched across local availability zones. Redis Enterprise architecture is made up of a management path and data access path.
