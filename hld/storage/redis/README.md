@@ -115,6 +115,14 @@ Multiple data models with dedicated engines
 
 ## Internals
 
+### Sructure
+Cluster is made up of nodes that are deployed within a data center or stretched across local availability zones. Redis Enterprise architecture is made up of a management path and data access path.
+
+- Management path includes the cluster manager, proxy and secure REST API/UI for programmatic administration. In short, cluster manager is responsible for orchestrating the cluster, placement of database shards as well as detecting and mitigating failures. Proxy helps scale connection management.
+
+- Data Access path is composed of master and replica Redis shards. Clients perform data operations on the master shard. Master shards maintain replica shards using the in-memory replication for protection against failures that may render master shard inaccessible.
+
+
 ### Memory
 
 When you set a database’s memory limit, you define the maximum size the database can reach in the cluster, **across all database replicas and shards**. Example: Create a database and Set the memory limit to 6 GB. Enable database clustering and configure the database to have three shards. Enable database replication in order to ensure high-availability.
