@@ -15,9 +15,12 @@ Redis is a realtime, robust in-memory NoSQL database platform. Shared-nothing cl
 ### Replication
 1. diskless replication, instant failure detection, and single-digit-seconds failover across racks, zones, and geographies
 2. redis replication can be done in two ways
-  - weak consistency: replication occurs asynchronously
-  - strong consistency: replication occurs synchronously
+   - weak consistency: replication occurs asynchronously
+   - strong consistency: replication occurs synchronously
 3. more details at: [Redis: Consistency & Durability](https://docs.redis.com/latest/rs/concepts/data-access/consistency-durability/)
+
+### Service Discovery
+Redis also uses service discovery to keep up with the topology changes. In case of a node failure, the Discovery Service is updated by the cluster manager(which runs on each node/machine) with the new endpoint and clients unable to connect to the database endpoint due to the failover, can re-query the discovery service for the new endpoint for the database. More details: [Redis: Discovery service](https://docs.redis.com/latest/rs/concepts/data-access/discovery-service/)
 
 ### Sharding
 automatic re-sharding and rebalancing
