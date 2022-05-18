@@ -22,9 +22,10 @@ Redis is a realtime, robust in-memory NoSQL database platform. Shared-nothing cl
 ### Service Discovery
 Redis also uses service discovery to keep up with the topology changes. In case of a node failure, the Discovery Service is updated by the cluster manager(which runs on each node/machine) with the new endpoint and clients unable to connect to the database endpoint due to the failover, can re-query the discovery service for the new endpoint for the database. More details: [Redis: Discovery service](https://docs.redis.com/latest/rs/concepts/data-access/discovery-service/)
 
-### Sharding
+### Clustering
 automatic re-sharding and rebalancing
 fully uses your infrastructure by splitting loads across multiple cores on every compute node
+More details: [Redis: Clustering](https://docs.redis.com/latest/rs/concepts/high-availability/clustering/)
 
 ### Active-Active Geo-Distribution
 - guarantees four-nines (99.99%) uptime and five-nines (99.999%) in **Active-Active deployments**
