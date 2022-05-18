@@ -1,6 +1,6 @@
 # Redis
 
-Redis is a realtime, robust in-memory NoSQL database platform. shared-nothing cluster architecture, redis Enterprise delivers **infinite linear scaling** without imposing non-linear overhead in a scale-out architecture
+Redis is a realtime, robust in-memory NoSQL database platform. Shared-nothing cluster architecture, redis Enterprise delivers **infinite linear scaling** without imposing non-linear overhead in a scale-out architecture
 
 ## Quick summary
 1. open source redis is a single threaded process and is bound by the CPU core that it is running on and available memory on the server
