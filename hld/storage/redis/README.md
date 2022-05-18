@@ -76,3 +76,4 @@ Guarantees four-nines (99.99%) uptime and five-nines (99.999%) in **Active-Activ
 
 1. [Redis: Technical Overview](https://docs.redis.com/latest/rs/technology-behind-redis-enterprise/)
 2. [Redis: Reference](https://redis.io/docs/reference/)
+3. [DB Engines: Redis](https://db-engines.com/en/system/Redis)
