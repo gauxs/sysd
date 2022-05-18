@@ -2,6 +2,8 @@
 
 Redis is a realtime, robust in-memory NoSQL database platform. Shared-nothing cluster architecture, redis Enterprise delivers **infinite linear scaling** without imposing non-linear overhead in a scale-out architecture
 
+**Note**: Salvatore Sanfilippo (creator of Redis) thinks it's a bad idea to use multiple DBs in a single Redis instance. [Reference](https://groups.google.com/g/redis-db/c/vS5wX8X4Cjg?pli=1)
+
 ## Overview
 1. open source redis is a single threaded process and is bound by the CPU core that it is running on and available memory on the server
 2. open source redis allows multiple database(db0...dbN) on a single redis instance whereas only one database(db0) is allowed in redis cluster
@@ -69,8 +71,6 @@ Guarantees four-nines (99.99%) uptime and five-nines (99.999%) in **Active-Activ
 
 7. **RedisGears**: is a distributed programmable engine in Redis. It makes it simple to execute server side logic using functions, triggers and control workflows across data-models/data-structures and shards
    - Use Cases: write behind/through | real-time data processing | reliable stream and events processing
-
-**Note**: Salvatore Sanfilippo (creator of Redis) thinks it's a bad idea to use multiple DBs in a single Redis instance. [Refernce](https://groups.google.com/g/redis-db/c/vS5wX8X4Cjg?pli=1)
 
 ## References
 
