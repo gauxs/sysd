@@ -49,7 +49,7 @@ Guarantees four-nines (99.99%) uptime and five-nines (99.999%) in **Active-Activ
 
 1. **RediSearch**: adds a secondary index, a query engine, and a full-text search to Redis
    - data model: index, query, and search in Redis Hashes
-   - use Cases: real-time indexes | product catalogue search | site search
+   - use cases: real-time indexes | product catalogue search | site search
 
 2. **RedisJSON**: adds native support for storing and retrieving JSON documents at the speed of Redis
    - data model: JSON Document
