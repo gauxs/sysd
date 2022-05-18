@@ -70,6 +70,9 @@ Guarantees four-nines (99.99%) uptime and five-nines (99.999%) in **Active-Activ
 7. **RedisGears**: is a distributed programmable engine in Redis. It makes it simple to execute server side logic using functions, triggers and control workflows across data-models/data-structures and shards
    - Use Cases: write behind/through | real-time data processing | reliable stream and events processing
 
+**Note**: Salvatore Sanfilippo (creator of Redis) thinks it's a bad idea to use multiple DBs in a single Redis instance. [Refernce](https://groups.google.com/g/redis-db/c/vS5wX8X4Cjg?pli=1)
+
 ## References
 
-1. [https://redis.com/redis-enterprise/advantages/](https://docs.redis.com/latest/rs/technology-behind-redis-enterprise/)
+1. [Redis: Technical Overview](https://docs.redis.com/latest/rs/technology-behind-redis-enterprise/)
+2. [Redis: Reference](https://redis.io/docs/reference/)
