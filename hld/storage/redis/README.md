@@ -25,11 +25,12 @@ Redis also uses service discovery to keep up with the topology changes. In case 
 ### Clustering
 Redis Enterprise Software (RS) supports database clustering to allow customers to spread the load of a Redis process over multiple cores and the RAM of multiple servers. A database cluster is a set of Redis processes where each process manages a subset of the database keyspace.
 
-Automatic re-sharding and rebalancing, fully uses your infrastructure by splitting loads across multiple cores on every compute node. More details: [Redis: Clustering](https://docs.redis.com/latest/rs/concepts/high-availability/clustering/)
+The key space in the shards is divided into hash slots. The slot of a key is determined by a hash of the key name or part of the key name. Automatic re-sharding and rebalancing, fully uses your infrastructure by splitting loads across multiple cores on every compute node. More details: [Redis: Clustering](https://docs.redis.com/latest/rs/concepts/high-availability/clustering/)
 
 ### Active-Active Geo-Distribution
-- guarantees four-nines (99.99%) uptime and five-nines (99.999%) in **Active-Active deployments**
-- using academically proven **conflict-free replicated data types (CRDTs)** technology, redis Enterprise automatically resolves conflicting writes, without changing the way your application uses Redis
+Each Active-Active database can have many Active-Active database instances that come with added smarts for handling globally distributed writes using the proven CRDT approach.
+
+Guarantees four-nines (99.99%) uptime and five-nines (99.999%) in **Active-Active deployments** using academically proven **conflict-free replicated data types (CRDTs)** technology, redis Enterprise automatically resolves conflicting writes, without changing the way your application uses Redis. More details: [Redis: Intercluster replication](https://docs.redis.com/latest/rs/concepts/intercluster-replication/)
 
 ## Data Types
 
