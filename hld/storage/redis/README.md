@@ -4,15 +4,20 @@ Redis is a realtime, robust in-memory NoSQL database platform. Shared-nothing cl
 
 ## Quick summary
 1. open source redis is a single threaded process and is bound by the CPU core that it is running on and available memory on the server
-2. to remove this limitation we can run multiple redis instance on multipe machine like a **cluser** named Redis Enterprise Software (RS) cluster
-3. a redis database can be deployed on multiple machines i.e. nodes, but this is abstracted from client/application point of view. An application accessing its database can have its key-data distributed between multiple single threaded redis processess i.e.master shards
-5. shard - redis process that is part of the Redis clustered database
+2. open source redis allows multiple database(db0...dbN) on a single redis instance whereas only one database(db0) is allowed in redis cluster
+3. to remove the limitation of single threaded redis, we can run multiple redis instance on multipe machine like a **cluser**, this is called Redis Enterprise Software (RS) cluster
+4. an application accessing its database can have its key-data distributed between multiple single threaded redis processess i.e. master shards
+5. **shard** is a redis process that is part of the Redis clustered database
 6. a single machine or node can run multiple redis instance i.e. shards
 7. Tag or Hash Tag - A part of the key that is used in the hash calculation.
 8. Slot or Hash Slot - The result of the hash calculation.
 
 ### Replication
-- diskless replication, instant failure detection, and single-digit-seconds failover across racks, zones, and geographies
+1. diskless replication, instant failure detection, and single-digit-seconds failover across racks, zones, and geographies
+2. redis replication can be done in two ways
+  - weak consistency: replication occurs asynchronously
+  - strong consistency: replication occurs synchronously
+3. more details at: [Redis: Consistency & Durability](https://docs.redis.com/latest/rs/concepts/data-access/consistency-durability/)
 
 ### Sharding
 automatic re-sharding and rebalancing
