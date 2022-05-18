@@ -22,3 +22,9 @@ Note that a fault is not the same as a failure. A fault is usually defined as on
 ### Backward vs forward compatibility
 - Backward compatibility - newer code can read data that was written by older code
 - Forward compatibility - older code can read data that was written by newer code
+
+### Serializable Transactions
+https://www.tutorialcup.com/dbms/transaction-serializability.htm
+
+### Linearlizability
+https://stackoverflow.com/questions/9762101/what-is-linearizability
