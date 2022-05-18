@@ -11,8 +11,8 @@ Redis is a realtime, robust in-memory NoSQL database platform. Shared-nothing cl
 4. an application accessing its database can have its key-data distributed between multiple single threaded redis processess i.e. master shards
 5. **shard** is a redis process that is part of the Redis clustered database
 6. a single machine or node can run multiple redis instance i.e. shards
-7. Tag or Hash Tag - A part of the key that is used in the hash calculation
-8. Slot or Hash Slot - The result of the hash calculation
+7. tag or hash tag - a part of the key that is used in the hash calculation
+8. slot or hash slot - result of the hash calculation
 
 ### Replication
 1. redis does diskless replication, instant failure detection, and single-digit-seconds failover across racks, zones, and geographies
