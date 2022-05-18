@@ -72,5 +72,4 @@ Guarantees four-nines (99.99%) uptime and five-nines (99.999%) in **Active-Activ
 
 ## References
 
-1. [Redis Advantages](https://redis.com/redis-enterprise/advantages/)
-2. [Redis Datatypes](https://redis.io/docs/manual/data-types/)
+1. [https://redis.com/redis-enterprise/advantages/](https://docs.redis.com/latest/rs/technology-behind-redis-enterprise/)
