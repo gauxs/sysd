@@ -43,18 +43,11 @@ fully uses your infrastructure by splitting loads across multiple cores on every
 
 ## Redis Modules and Usecases
 
-1. RediSearch
+1. RediSearch: adds a secondary index, a query engine, and a full-text search to Redis
+   - data model: index, query, and search in Redis Hashes
+   - use Cases: Real-time indexes | Product catalogue search | Site search
 
-- RediSearch adds a secondary index, a query engine, and a full-text search to Redis
-- Data Model: Index, query, and search in Redis Hashes
-- Use Cases:
-  - Real-time indexes
-  - Product catalogue search
-  - Site search
-
-2. RedisJSON
-
-- RedisJSON adds native support for storing and retrieving JSON documents at the speed of Redis.
+2. RedisJSON: adds native support for storing and retrieving JSON documents at the speed of Redis
 - Data Model: JSON Document
 - Use Cases:
   - Content management
