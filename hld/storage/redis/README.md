@@ -45,56 +45,28 @@ fully uses your infrastructure by splitting loads across multiple cores on every
 
 1. RediSearch: adds a secondary index, a query engine, and a full-text search to Redis
    - data model: index, query, and search in Redis Hashes
-   - use Cases: Real-time indexes | Product catalogue search | Site search
+   - use Cases: real-time indexes | product catalogue search | site search
 
 2. RedisJSON: adds native support for storing and retrieving JSON documents at the speed of Redis
-- Data Model: JSON Document
-- Use Cases:
-  - Content management
-  - Hierarchical data
-  - Personalization
+   - data model: JSON Document
+   - use cases: content management | hierarchical data | Personalization
 
-3. RedisGraph
+3. RedisGraph: is a queryable property graph data structure designed for real-time use cases
+   - data model: sparse adjacency matrix
+   - use cases: resource management (identity, access management) | payment management | assets management
 
-- RedisGraph is a queryable property graph data structure designed for real-time use cases.
-- Data Model: Sparse Adjacency Matrix
-- Use Cases:
-  - Resource Management (Identity, Access Management)
-  - Payment management
-  - Assets management
+4. RedisTimeSeries: adds native time-series database capabilities to Redis.
+   - data model: redis radix tree
+   - use cases: application monitoring | anomaly detection | telemetry
 
-4. RedisTimeSeries
+5. RedisBloom: adds bloom filter, cuckoo filter, count-min Sketch, and top-K capabilities to Redis
+   - use cases: fraud mitigation | leaderboards | advertising
 
-- RedisTimeSeries adds native time-series database capabilities to Redis.
-- Data Model: Redis Radix Tree
-- Use Cases:
-  - Application monitoring
-  - Anomaly detection
-  - Telemetry
+6. RedisAI: is a real-time AI inferencing/serving engine in Redis
+   - use cases: fraud detection/transaction scoring | recommendation engines | ads serving
 
-5. RedisBloom
-
-- RedisBloom adds Bloom filter, Cuckoo filter, Count-Min Sketch, and Top-K capabilities to Redis.
-- Use Cases:
-  - Fraud mitigation
-  - Leaderboards
-  - Advertising
-
-6. RedisAI
-
-- RedisAI is a real-time AI inferencing/serving engine in Redis.
-- Use Cases:
-  - Fraud detection/transaction scoring
-  - Recommendation engines
-  - Ads serving
-
-7. RedisGears
-
-- RedisGears is a distributed programmable engine in Redis. It makes it simple to execute server side logic using functions, triggers and control workflows across data-models/data-structures and shards
-- Use Cases:
-  - Write behind/through
-  - Real-time data processing
-  - Reliable stream and events processing
+7. RedisGears: is a distributed programmable engine in Redis. It makes it simple to execute server side logic using functions, triggers and control workflows across data-models/data-structures and shards
+   - Use Cases: write behind/through | real-time data processing | reliable stream and events processing
 
 ## References
 
