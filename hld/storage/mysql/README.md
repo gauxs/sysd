@@ -3,6 +3,7 @@
 Strict schema has its own advantages and disadvantages. Read *Chapter:2 Data Models & Query Languages* of *Designing Data-Intensive Application* for indepth information.
 
 ## ACID
+Read *Chapter:& Transactions* of *Designing Data-Intensive Application* for indepth information.
 
 ## Query Engine
 Query engine has its own advantages. Read *Chapter:2 Data Models & Query Languages - Query Languages for Data* of *Designing Data-Intensive Application* for indepth information.
