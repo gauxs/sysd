@@ -41,17 +41,28 @@ Cons:
 3. Data scaling can only be done by increasing hardware for larger data storage requirement either mysql cluster solution can be used
  
 #### MySQL Cluster
-MySQL Cluster is a shared nothing, distributed, partitioning system that uses synchronous replication in order to maintain high availability and performance.
+MySQL Cluster is a highly scalable, real-time, ACID-compliant transactional database, shared nothing, distributed, partitioning system that uses synchronous replication in order to maintain high availability and performance.
 
 MySQL Cluster is implemented through a separate storage engine called NDB Cluster. This storage engine will automatically partition data across a number of data nodes. The automatic partitioning of data allows for parallelization of queries that are executed. Both reads and writes can be scaled in this fashion since the writes can be distributed across many nodes.
 
 Internally, MySQL Cluster also uses synchronous replication in order to remove any single point of failure from the system. Since two or more nodes are always guaranteed to have the data fragment, at least one node can fail without any impact on running transactions. Failure detection is automatically handled with the dead node being removed transparent to the application. Upon node restart, it will automatically be re-integrated into the cluster and begin handling requests as soon as possible.
 
-There are a number of limitations that currently exist 
+Ensures results from SELECT operations are consistent, regardless of which node they are returned from.
 
 ## Application and usecases
+1. High volume OLTP (online transaction processing)
+2. Real time analytics
+3. Ecommerce and financial trading with fraud detection
+4. Mobile and micro-payments
+5. Session management & caching
+6. Feed streaming, analysis and recommendations
+7. Content management and delivery
+8. Massively Multiplayer Online Games
+9. Communications and presence services
+10. Subscriber/user profile management and entitlements
 
 ## Reference
 1. [DB Engines - MySQL](https://db-engines.com/en/system/MySQL)
 2. [DZone - MySQL replication types](https://dzone.com/articles/pros-and-cons-of-mysql-replication-types)
 3. [MySQL Lab](http://www.mysqlab.net/knowledge/kb/detail/topic/cluster/id/5184)
+4. [MySQL cluster](https://www.w3resource.com/mysql/mysql-cluster-overview.php)
