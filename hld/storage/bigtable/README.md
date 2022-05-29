@@ -1,4 +1,6 @@
 # BigTable
+`primary database model - key-value and wide-column store`|
+
 Bigtable does not support a full relational data model; instead, it provides clients with a simple data model that supports dynamic control over data layout and format, and allows clients to reason about the locality properties of the data represented in the underlying storage.
 
 Data is indexed using row and column names that can be arbitrary strings. Clients can control the locality of their data through careful choices in their schemas.
