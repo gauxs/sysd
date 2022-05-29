@@ -17,7 +17,7 @@ Pros:
 2. You can split read and write requests to different servers. For example, all analytics queries can be made on Slave nodes.
 
 Cons:
-1. It is not very reliable because of asynchronous replication. It means that some committed on master transactions may be not available on slave if the master fails.
+1. Cannot guarantee durability and eventual consistency because of asynchronous replication. It means that some committed on master transactions may be lost on slave if the master fails.
 2. Write requests can hardly be scaled. The only option to scale write requests is to increase compute capacity (RAM and CPU) of the Master node.
 Failover process is manual in a general case. You should take care of promotion replica node to master one.
 
