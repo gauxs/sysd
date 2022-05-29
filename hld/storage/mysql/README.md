@@ -17,9 +17,21 @@ Pros:
 2. You can split read and write requests to different servers. For example, all analytics queries can be made on Slave nodes.
 
 Cons:
-1. Cannot guarantee durability and eventual consistency because of asynchronous replication. It means that some committed on master transactions may be lost on slave if the master fails.
+1. Offers weak guarantees because of asynchronous replication. It means that some committed on master transactions may be lost on slave if the master fails.
 2. Write requests can hardly be scaled. The only option to scale write requests is to increase compute capacity (RAM and CPU) of the Master node.
 Failover process is manual in a general case. You should take care of promotion replica node to master one.
+
+#### Master-Master Replication
+Master-master replication has been evolved from master-slave replication and solves its major issues. This type of replication assumes that you have two or more master nodes that can accept both read and write requests. In addition, you can have multiple slave nodes for each of your masters. The replication between master nodes is asynchronous.
+
+Pros:
+1. You have an option to scale write requests not only by increasing the computing capacity of a single master node but via adding additional master nodes.
+2. Failover semi-automatic because you have multiple master nodes. The chance that all master nodes fail simultaneously is very low. If any of master nodes fail, there is at least one more master node that can handle its requests.
+
+Cons:
+1. Due to asynchronous replication between all master nodes, you can lose some transaction in case one of the master nodes fail.
+2. Due to asynchronous replication, you can’t be sure that backups made on each master node contain the same data.
+3. Failover is still not fully automated in case you need to promote a Slave node to Master one.
 
 ## Scaling
    - Read - MS
