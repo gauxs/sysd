@@ -38,11 +38,18 @@ Cons:
 ## Scaling
 1. Read scaling via MS and MM
 2. Write scaling via MS(shifting read load on slaves) and MM(dividing writes among masters)
-3. Data scaling can only be done by increasing hardware for larger data storage requirement a distributed database can be used
+3. Data scaling can only be done by increasing hardware for larger data storage requirement either mysql cluster solution can be used
  
-## Application and usecases
+#### MySQL Cluster
+MySQL Cluster is a shared nothing, distributed, partitioning system that uses synchronous replication in order to maintain high availability and performance.
 
-# MySQL Cluster
+MySQL Cluster is implemented through a separate storage engine called NDB Cluster. This storage engine will automatically partition data across a number of data nodes. The automatic partitioning of data allows for parallelization of queries that are executed. Both reads and writes can be scaled in this fashion since the writes can be distributed across many nodes.
+
+Internally, MySQL Cluster also uses synchronous replication in order to remove any single point of failure from the system. Since two or more nodes are always guaranteed to have the data fragment, at least one node can fail without any impact on running transactions. Failure detection is automatically handled with the dead node being removed transparent to the application. Upon node restart, it will automatically be re-integrated into the cluster and begin handling requests as soon as possible.
+
+There are a number of limitations that currently exist 
+
+## Application and usecases
 
 ## Reference
 1. [DB Engines - MySQL](https://db-engines.com/en/system/MySQL)
