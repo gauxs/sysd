@@ -1,9 +1,11 @@
 # MySQL
 ## Schema
+Strict schema has its own advantages and disadvantages. Read *Chapter:2 Data Models & Query Languages* of *Designing Data-Intensive Application* for indepth information.
 
 ## ACID
 
-## Query Engine - Advantages etc
+## Query Engine
+Query engine has its own advantages. Read *Chapter:2 Data Models & Query Languages - Query Languages for Data* of *Designing Data-Intensive Application* for indepth information.
 
 ## Replication
 It is not trivial making MySQL totally reliable and available in cases of high load. Database replication and clustering can help you achieve this goal. Types of mysql replication:
