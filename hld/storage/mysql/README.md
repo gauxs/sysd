@@ -8,3 +8,4 @@
    - Read - MS
    - Write - MS || MM
    - Data - Sharding via mySQL cluster
+7. Application and usecases
