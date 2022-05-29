@@ -16,7 +16,10 @@ The row keys in a table are arbitrary strings (currently up to 64KB in size, alt
 
 Bigtable maintains data in lexicographic order by row key. The row range for a table is dynamically partitioned. Each row range is called a **tablet**, which is the unit of distribution and load balancing.
 
+Reads of short row ranges are efficient and typically require communication with only a small number of machines. Clients can exploit this property by selecting their row keys so that they get good locality for their data accesses
 
+#### Column Families
+Column keys are grouped into sets called column families, which form the basic unit of access control.
 
 ## Reference
 1. [Google - BigTable paper](https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
