@@ -4,4 +4,7 @@
 3. Query Engine - Advantages etc
 4. Distributed setup - MS/MM
 5. High Availability - Replication | Consistency
-6. Scaling - Read | Write | Data
+6. Scaling
+   - Read - MS
+   - Write - MS || MM
+   - Data - Sharding
