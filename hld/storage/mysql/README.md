@@ -33,6 +33,8 @@ Cons:
 2. Due to asynchronous replication, you can’t be sure that backups made on each master node contain the same data.
 3. Failover is still not fully automated in case you need to promote a Slave node to Master one.
 
+Replication can be used for many reasons. Some of the more common reasons include scalibility, server failover, and for backup solutions.
+
 ## Scaling
    - Read - MS
    - Write - MS || MM
