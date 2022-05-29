@@ -7,4 +7,4 @@
 6. Scaling
    - Read - MS
    - Write - MS || MM
-   - Data - Sharding
+   - Data - Sharding via mySQL cluster
