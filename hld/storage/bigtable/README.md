@@ -11,6 +11,11 @@ A Bigtable is a sparse, distributed, persistent multidimensional sorted map. The
 (row:string, column:string, time:int64) → string
 ```
 
+#### Row
+The row keys in a table are arbitrary strings (currently up to 64KB in size, although 10-100 bytes is a typical size for most of our users). Every read or write of data under a single row key is atomic (regardless of the number of different columns being read or written in the row), a design decision that makes it easier for clients to reason about the system’s behavior in the presence of concurrent updates to the same row.
+
+Bigtable maintains data in lexicographic order by row key. The row range for a table is dynamically partitioned. Each row range is called a **tablet**, which is the unit of distribution and load balancing.
+
 
 
 ## Reference
