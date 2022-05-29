@@ -5,5 +5,13 @@ Data is indexed using row and column names that can be arbitrary strings. Client
 
 Bigtable schema parameters let clients dynamically control whether to serve data out of memory or from disk
 
+## DataModel
+A Bigtable is a sparse, distributed, persistent multidimensional sorted map. The map is indexed by a row key, column key, and a timestamp; each value in the map is an uninterpreted array of bytes.
+```
+(row:string, column:string, time:int64) → string
+```
+
+
+
 ## Reference
 1. [Google - BigTable paper](https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
