@@ -21,5 +21,12 @@ Reads of short row ranges are efficient and typically require communication with
 #### Column Families
 Column keys are grouped into sets called column families, which form the basic unit of access control.
 
+It is our intent that the number of distinct column families in a table be small (in the hundreds at most), and that families rarely change during operation. In contrast, a table may have an unbounded number of columns.
+
+#### Timestamps
+Each cell in a Bigtable can contain multiple versions of the same data; these versions are indexed by timestamp. Bigtable timestamps are 64-bit integers.
+
+They can be assigned by Bigtable, in which case they represent “real time” in microseconds, or be explicitly assigned by client applications.
+
 ## Reference
 1. [Google - BigTable paper](https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
