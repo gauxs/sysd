@@ -36,9 +36,10 @@ Cons:
 **Note**: Replication can be used for many reasons. Some of the more common reasons include scalibility, server failover, and for backup solutions.
 
 ## Scaling
-   - Read - MS
-   - Write - MS || MM
-   - Data - Sharding via mySQL cluster
+1. Read scaling via MS and MM
+2. Write scaling via MS(shifting read load on slaves) and MM(dividing writes among masters)
+3. Data scaling can only be done by increasing hardware for larger data storage requirement a distributed database can be used
+ 
 ## Application and usecases
 
 # MySQL Cluster
@@ -46,3 +47,4 @@ Cons:
 ## Reference
 1. [DB Engines - MySQL](https://db-engines.com/en/system/MySQL)
 2. [DZone - MySQL replication types](https://dzone.com/articles/pros-and-cons-of-mysql-replication-types)
+3. [MySQL Lab](http://www.mysqlab.net/knowledge/kb/detail/topic/cluster/id/5184)
