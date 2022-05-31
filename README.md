@@ -22,6 +22,7 @@ High level design is also known as system design. System Design is the process o
 4. [Highscalability](http://highscalability.com/)
 5. [Amazon builders library](https://aws.amazon.com/builders-library/?cards-body.sort-by=item.additionalFields.sortDate&cards-body.sort-order=desc&awsf.filter-content-category=*all&awsf.filter-content-type=*all&awsf.filter-content-level=*all) and [AWS architecture center](https://aws.amazon.com/architecture/?intClick=dev-center-2021_main)
 6. [Handwritten notes on system design](https://github.com/gauxs/sysd/blob/master/resource/system_design_basics_handbook.pdf)
+7. [Distributed System - Paul Krzyzanowski](https://people.cs.rutgers.edu/~pxk/417/notes/index.html) - Good reference to know the name of all the terms related to distributed system
 
 **Note**: [Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview) by educative is also good, its a paid course though. I have also heard there is a free PDF of this course available on internet :smirk:.
 
