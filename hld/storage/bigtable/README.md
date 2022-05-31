@@ -31,4 +31,5 @@ Each cell in a Bigtable can contain multiple versions of the same data; these ve
 They can be assigned by Bigtable, in which case they represent “real time” in microseconds, or be explicitly assigned by client applications.
 
 ## Reference
-1. [Google - BigTable paper](https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
+1. [Google Cloud - BigTable](https://cloud.google.com/bigtable/docs/overview)
+2. [Google - BigTable paper](https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf)
