@@ -1,5 +1,5 @@
 # BigTable
-`primary database model - key-value and wide-column store` | `no secondary indexing`
+`primary database model - key-value and wide-column store` | `no secondary indexing` | `atomic operation on rows`
 
 Bigtable does not support a full relational data model; instead, it provides clients with a simple data model that supports dynamic control over data layout and format, and allows clients to reason about the locality properties of the data represented in the underlying storage.
 
