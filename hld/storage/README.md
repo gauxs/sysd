@@ -74,7 +74,7 @@ A search-engine database is a type of nonrelational database that is dedicated t
 
 A [wide-column database](https://www.scylladb.com/glossary/wide-column-database/) is a type of NoSQL database in which the names and format of the columns can vary across rows, even within the same table. Wide-column databases are also known as column family databases. Because data is stored in columns, queries for a particular value in a column are very fast, as the entire column can be loaded and searched quickly. Related columns can be modeled as part of the same column family.
 
-1. Common features: `primary database model - wide column store` | `schema free` | `restricted secondary indexing` | `partitioning - sharding` | `selectable replication` | `no map-reduce` | `no transaction concepts` | `concurrent` | `durable` | `in-memory capabilities`
+1. Common features: `primary database model - wide column store` | `schema free` | `restricted secondary indexing` | `partitioning - sharding` | `selectable replication` | `map-reduce` | `no transaction concepts` | `concurrent` | `durable` | `in-memory capabilities`
 2. [Cassandra - wide-column store based on ideas of BigTable and DynamoDB](https://db-engines.com/en/system/Cassandra)
 3. Thoughts:
    - its an AP system with eventual consistency
