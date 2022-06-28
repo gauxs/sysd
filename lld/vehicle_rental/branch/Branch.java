@@ -1,9 +1,12 @@
-package lld.vehicle_rental.branch;
+package branch;
 
 import java.util.HashMap;
-import lld.vehicle_rental.vehicle.*;
+import vehicle.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+/*
+ * Holds vehicle pricing at a category level
+ */
 class VehicleCategoryPricing {
     HashMap<VehicleCategory, Integer> vehicleCategoryPrices;
 
@@ -23,7 +26,7 @@ class VehicleCategoryPricing {
         return pricing;
     }
 
-    void updateVehicleCategoryPrice(VehicleCategory category, Integer newPrice) {
+    void allocatePrice(VehicleCategory category, Integer newPrice) {
         vehicleCategoryPrices.put(category, newPrice);
     }
 
@@ -32,7 +35,11 @@ class VehicleCategoryPricing {
     }
 }
 
-// add more methods for analysis on vehicles
+/* 
+ * add more methods for analysis on vehicles
+ * holds all the vehicle currently registered 
+ * in this branch 
+ */
 class VehicleInfo {
     HashMap<Integer, Boolean> vehicleInfoDB;
 
@@ -49,6 +56,11 @@ class VehicleInfo {
     }
 }
 
+/*
+ * Represents a branch
+ * holds all the vehicle categories
+ * holds all the vehicle ID's
+ */
 public class Branch {
     private Integer id;
     private String name;
@@ -87,8 +99,8 @@ public class Branch {
         return this.name;
     }
 
-    void updateVehicleCategoryPrice(VehicleCategory category, Integer newPrice) {
-        this.vehiclePricing.updateVehicleCategoryPrice(category, newPrice);
+    void allocatePrice(VehicleCategory category, Integer newPrice) {
+        this.vehiclePricing.allocatePrice(category, newPrice);
     }
 
     public Integer getVehicleCategoryPrice(VehicleCategory category) {
