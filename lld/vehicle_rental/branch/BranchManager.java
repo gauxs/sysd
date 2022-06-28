@@ -1,7 +1,7 @@
-package lld.vehicle_rental.branch;
+package branch;
 
 import java.util.HashMap;
-import lld.vehicle_rental.vehicle.*;
+import vehicle.*;
 
 public class BranchManager {
     HashMap<Integer, Branch> branchDB;
@@ -27,9 +27,9 @@ public class BranchManager {
         return this.branchDB.get(branchID);
     }
 
-    public void updateVehicleCategoryPrice(Integer branchID, VehicleCategory category, Integer newPrice) {
+    public void allocatePrice(Integer branchID, VehicleCategory category, Integer newPrice) {
         Branch branch = this.branchDB.get(branchID);
-        branch.updateVehicleCategoryPrice(category, newPrice);
+        branch.allocatePrice(category, newPrice);
     }
 
     public void addVehicle(Integer branchID, Integer vehicleID) {
