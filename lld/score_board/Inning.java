@@ -92,8 +92,8 @@ public class Inning{
     ScoreBoard board;
     // this will be defined from external systems
     // but is randomly defined for demo purposes
-    Integer batsman1;
-    Integer batsman2;
+    Integer onStrikeBatsman;
+    Integer otherBatsman;
     Vector<Player> battingOrder;
     // this will be defined from external systems
     // but is randomly defined for demo purposes
@@ -112,15 +112,23 @@ public class Inning{
     }
 
     Boolean isInningFinished(){
-        return this.currentOver>this.totalOvers;
+        return this.currentOver>this.totalOvers || this.onStrikeBatsman==-1 || this.otherBatsman==-1;
     }
 
     void setBattingTeam(Team team){
         this.battingTeam = team;
+        // player insert order becomes the batting order
+        this.battingOrder = this.battingTeam.players;
+        this.onStrikeBatsman = 0;
+        this.otherBatsman = 1;
     }
 
     void setBowlingTeam(Team team){
         this.bowlingTeam = team;
+        // player insert order becomes the batting order
+        // and are picked in round robin fashion
+        this.bowlingOrder = this.bowlingTeam.players;
+        this.curBowler = 0;
     }
 
     void setRunTarget(Integer runTarget){
@@ -131,10 +139,16 @@ public class Inning{
         return 0;
     }
 
+    void swap(Integer a, Integer b){
+        Integer temp = a;
+        a = b;
+        b = temp;
+    }
+
     void handleEvent(Event event){
         Over curOver = this.overs.get(this.currentOver);
-        Player onStrikePlayer = this.board.getOnStrikeBatsman();
-        Player bowler = this.board.getBowler();
+        Player onStrikePlayer = this.battingOrder.get(this.onStrikeBatsman);
+        Player bowler = this.bowlingOrder.get(this.curBowler);
 
         // create a ball
         Ball ball = new Ball(onStrikePlayer, bowler, event);
@@ -143,12 +157,13 @@ public class Inning{
         switch(event){
             case OUT:
             // change onstrike batsman
+            // if not more player inning finished
             break;
             case RUN_1:
-            // change onstrike batsman
+            swap(this.onStrikeBatsman, this.otherBatsman);
             break;
             case RUN_3:
-            // change onstrike batsman
+            swap(this.onStrikeBatsman, this.otherBatsman);
             break;
         }    
 
@@ -158,7 +173,9 @@ public class Inning{
                 return;
             }else{
                 // change bowler
+                this.curBowler = (this.curBowler + 1)%this.bowlingOrder.size();
                 // change onstrike batsman
+                swap(this.onStrikeBatsman, this.otherBatsman);
             }
         }
     }
