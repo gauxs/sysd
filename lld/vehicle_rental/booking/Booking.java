@@ -1,7 +1,10 @@
-package lld.vehicle_rental.booking;
+package booking;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+/*
+ * Holds all the booking info of the vehicle
+ */
 class VehicleBookingInfo {
     private Integer VehicleID;
     private Integer StartTime;
@@ -40,6 +43,10 @@ class VehicleBookingInfo {
     }
 }
 
+/*
+ * Generates a new booking with the information
+ * provided
+ */
 public class Booking {
     private Integer bookingID;
     private VehicleBookingInfo vehicleInfo;
