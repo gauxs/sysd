@@ -1,8 +1,11 @@
-package lld.vehicle_rental.vehicle;
+package vehicle;
 
 import java.util.concurrent.ThreadLocalRandom;
-import lld.vehicle_rental.branch.*;
+import branch.*;
 
+/*
+ * Represents the vehicle along with its branch and category
+ */
 public class Vehicle {
     private Integer id;
     private Integer branchID;
