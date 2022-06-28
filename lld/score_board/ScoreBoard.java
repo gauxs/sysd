@@ -14,20 +14,8 @@ class Score{
 }
 
 public class ScoreBoard{
-    Player onStrike;
-    Player notOnStrike;
-    Player bowler;
     Integer totalScore;
-    
     HashMap<Player, Score> board;
-
-    Player getBowler(){
-        return this.bowler;
-    }
-
-    Player getOnStrikeBatsman(){
-        return this.onStrike;
-    }
 
     void addScore(Integer run){
 
