@@ -1,9 +1,10 @@
-package lld.vehicle_rental.vehicle;
+package vehicle;
 
 import java.util.*;
 
-import lld.vehicle_rental.branch.*;
+import branch.*;
 
+// range queries can be handled more suitably by a segment tree
 // TODO: implement this
 class SegmentNode {
     private Integer startHour;
@@ -49,6 +50,7 @@ class SegmentNode {
     }
 }
 
+// range queries can be handled more suitably by a segment tree
 // TODO: implement this
 class SegementDB {
     SegmentNode root;
@@ -70,6 +72,10 @@ class SegementDB {
     }
 }
 
+/*
+ * Manages all the vehicle present in all the branches
+ * holds all the available vehicle
+ */
 public class VehicleManager {
     List<List<Integer>> availabilityDB;
     HashMap<Integer, Vehicle> vehicleDB;
@@ -109,6 +115,7 @@ public class VehicleManager {
             this.availabilityDB.get(i).add(v.getID());
         }
 
+        // registering vehicle to branch
         BranchManager.getBranchManager().addVehicle(branchID, v.getID());
         return v.getID();
     }
@@ -143,7 +150,7 @@ public class VehicleManager {
             Boolean vehicleEligible = true;
             Integer vehicleID = entry.getKey();
             Vehicle vehicle = entry.getValue();
-            for (Integer i = startTime; i <= endTime; i++) {
+            for (Integer i = startTime; i < endTime; i++) { 
                 if (!this.availabilityDB.get(i).contains(vehicleID)) {
                     vehicleEligible = false;
                     break;
@@ -158,13 +165,23 @@ public class VehicleManager {
         return availableVehicles;
     }
 
+    // keep this synchronized
     public void blockVehicle(Integer vehicleID, Integer startTime, Integer endTime) {
-        for (Integer i = startTime; i <= endTime; i++) {
+        for (Integer i = startTime; i < endTime; i++) { 
+            // if "vehicleID" is not present in any of the 
+            // time interval, add back the vehicle id in previous interval and 
+            // return
             this.availabilityDB.get(i).remove(vehicleID);
         }
     }
 
-    public void getOverview(Integer startTime, Integer endTime) {
+    public void describeAllVehicles(){
+        for (Map.Entry<Integer, Vehicle> entry : this.vehicleDB.entrySet()) {
+            System.out.println(entry.getValue());
+        }
+    }
+
+    public void viewVehicleInventory(Integer startTime, Integer endTime) {
         HashMap<VehicleCategory, List<Vehicle>> available = new HashMap<>();
         HashMap<VehicleCategory, List<Vehicle>> unavailable = new HashMap<>();
 
@@ -172,7 +189,7 @@ public class VehicleManager {
             Boolean vehicleEligible = true;
             Integer vehicleID = entry.getKey();
             Vehicle vehicle = entry.getValue();
-            for (Integer i = startTime; i <= endTime; i++) {
+            for (Integer i = startTime; i < endTime; i++) { 
                 if (!this.availabilityDB.get(i).contains(vehicleID)) {
                     vehicleEligible = false;
                     break;
