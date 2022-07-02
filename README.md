@@ -6,6 +6,7 @@ Things i learned while reading about distributed programming[^1].
 - [ ] OOPs concepts (SOLID priciples)
 - [ ] Operating system concepts (multithreading, concurrency and deadlock)
 - [ ] Networking concepts (Layers and their internals)
+- [ ] Database inernals (indexing, composite indexing)
 - [ ] Actual implementation of concurrency based LLD questions like Dining philosopher
 
 ## Low Level Design
