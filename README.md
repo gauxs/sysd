@@ -2,6 +2,12 @@
 
 Things i learned while reading about distributed programming[^1].
 
+## Checklist
+- [ ] OOPs concepts (SOLID priciples)
+- [ ] Operating system concepts (multithreading, concurrency and deadlock)
+- [ ] Networking concepts (Layers and their internals)
+- [ ] Actual implementation of concurrency based LLD questions like Dining philosopher
+
 ## Low Level Design
 
 Each component of a system can be a design challenge in itself. Design questions on these component can be vaguly categorized under LLD. Skeleton code of some of these LLD designs can be implemented in a reasonable amount of time and are often asked in interviews. I have documented my approach of solving various LLD design along with the problem statement, do try it out.
