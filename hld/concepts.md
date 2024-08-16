@@ -20,10 +20,10 @@ The system that anticipates faults and can cope with them are called *fault-tole
 
 ### Describing performance of a system
 1. Batch processing system: Number of records we can process per second or the total time it takes to run a job on a dataset of a certain size
-2. Online systems: Service's response time [^1]
+2. Online systems: Service's response time [^1][^2]
 
 ## Maintainability
 
 [^1]: Latency vs Response Time: The **response time** is what the client sees: besides the actual time to process the request (the service time), it includes network delays and queueing delays. **Latency** is the duration that a request is waiting to be handled - during which it is latent, awaiting service.
 
-[^2]: **Queueing delays** 
+[^2]: **Queueing delays** often account for large part of the response time at high percentiles. As a server can only process a small number of things in parallel(limited, for example, by its number of CPU cores), it only takes a small number of slow requests to hold up the processing of subsequent requests - an effect sometimes known as *head-of-line blocking*.
