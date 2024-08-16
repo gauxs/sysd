@@ -15,5 +15,6 @@ The system that anticipates faults and can cope with them are called *fault-tole
 3. Human Faults: Manual configuration error
 
 ## Scalability
+**Load** on a system can be described via *load paramenters*. The best choice of parameters depends on the architecture of the system. Example: requests/second of a web server, ratio of reads to writes in a database, number of simultaneous users in a chat room.
 
 ## Maintainability
