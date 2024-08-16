@@ -16,7 +16,7 @@ The system that anticipates faults and can cope with them are called *fault-tole
 
 ## Scalability
 ### Describing load on a system
-**Load** on a system can be described via *load paramenters*. The best choice of parameters depends on the architecture of the system. Example: requests/second of a web server, ratio of reads to writes in a database, number of simultaneous users in a chat room.
+**Load** on a system can be described via *load paramenters*. The best choice of parameters depends on the architecture of the system. Example: requests/second of a web server, ratio of reads to writes in a database, number of simultaneous users in a chat room. For Twitter, the distribution of followers per user (possibly weighted by how often those users tweet) is a key load parameter for discussing scalability, since it determines the fan-out load.
 
 ### Describing performance of a system
 
