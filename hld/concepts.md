@@ -4,3 +4,10 @@ Three concerns that are important in most software systems:
 2. **Scalability**: Measuring load and performance, latency percentiles & throughput. As the system grows (in data volume, traffic volume, or complexity), there should be reasonable ways of dealing with that growth.
    
 3. **Maintainability**: Operability, simplicity & evolvability. Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new usecases), and they should all be able to work on it productively.
+
+## Reliability
+
+
+## Scalability
+
+## Maintainability
