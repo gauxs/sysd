@@ -24,4 +24,4 @@ The system that anticipates faults and can cope with them are called *fault-tole
 
 ## Maintainability
 
-[^1]: My reference.
+[^1]: Latency vs Response Time: The **response time** is what the client sees: besides the actual time to process the request (the service time), it includes network delays and queueing delays. **Latency** is the duration that a request is waiting to be handled - during which it is latent, awaiting service.
