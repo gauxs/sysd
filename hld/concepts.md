@@ -22,6 +22,10 @@ The system that anticipates faults and can cope with them are called *fault-tole
 1. Batch processing system: Number of records we can process per second or the total time it takes to run a job on a dataset of a certain size
 2. Online systems: Service's response time [^1][^2]
 
+The architecture of systems that operate at large scale is usually highly specific to the application—there is no such thing as a generic, one-size-fits-all scalable architecture (informally known as magic scaling sauce). The problem may be the volume of reads, the volume of writes, the volume of data to store, the complexity of the data, the response time requirements, the access patterns, or (usually) some mixture of all of these plus many more issues.
+
+For example, a system that is designed to handle 100,000 requests per second, each 1 kB in size, looks very different from a system that is designed for 3 requests per minute, each 2 GB in size—even though the two systems have the same data throughput.
+
 ## Maintainability
 
 [^1]: Latency vs Response Time: The **response time** is what the client sees: besides the actual time to process the request (the service time), it includes network delays and queueing delays. **Latency** is the duration that a request is waiting to be handled - during which it is latent, awaiting service.
