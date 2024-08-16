@@ -10,6 +10,10 @@ A *fault* is not the same as *failure*. A fault is usually defined as one compon
 
 The system that anticipates faults and can cope with them are called *fault-tolerant* or *resilient*.
 
+1. Hardware Faults: 
+2. Software Faults: Bugs
+3. Human Faults: Manual configuration error
+
 ## Scalability
 
 ## Maintainability
