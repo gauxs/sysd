@@ -20,6 +20,8 @@ The system that anticipates faults and can cope with them are called *fault-tole
 
 ### Describing performance of a system
 1. Batch processing system: Number of records we can process per second or the total time it takes to run a job on a dataset of a certain size
-2. Online systems: Service's response time
+2. Online systems: Service's response time[^1]
 
 ## Maintainability
+
+[^1]: My reference.
