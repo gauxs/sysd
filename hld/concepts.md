@@ -6,7 +6,9 @@ Three concerns that are important in most software systems:
 3. **Maintainability**: Operability, simplicity & evolvability. Over time, many different people will work on the system (engineering and operations, both maintaining current behavior and adapting the system to new usecases), and they should all be able to work on it productively.
 
 ## Reliability
+A *fault* is not the same as *failure*. A fault is usually defined as one component of the system deviating from its spec, whereas a failure is when the system as a whole stops providing the required service to the user.
 
+The system that anticipates faults and can cope with them are called *fault-tolerant* or *resilient*.
 
 ## Scalability
 
