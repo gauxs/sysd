@@ -11,34 +11,69 @@ In a complex application there may be more intermediary levels, such as APIs bui
 
 ## Relational Model
 
-As computers became vastly more powerful and networked, they started being used for increasingly diverse purposes. And remarkably, relational databases turned out to generalize very well, beyond their original scope of business data processing, to a broad variety of use cases.
+As computers became vastly more powerful and networked, they started being used for increasingly diverse purposes. And remarkably, relational model turned out to generalize very well, beyond their original scope of business data processing, to a broad variety of use cases.
+
+Relational model laid out all the data in the open: a relation (table) is simply a collection of tuples (rows). There are no labyrinthine nested structures, no complicated access paths(like in case of graph model) to follow if you want to look at the data.
 
 ### Advantages
 
-1. Better support for joins
+1. In a relational database, the query optimizer automatically decides which parts of the query to execute in which order, and which indexes to use. Those choices are effectively the “access path,” but the big difference is that they are made automatically by the query optimizer, not by the application developer, so we rarely need to think about them. If we want to query your data in new ways, we can just declare a new index, and queries will automatically use whichever indexes are most appropriate. The relational model thus made it much easier to add new features to applications.
 
-2. Can support many-to-one and many-to-many relationships.
+2. Supports one-to-many, many-to-one and many-to-many relationships.
+
+3. Good support for joins(one-to-many).
 
 ### Disadvantages
 
 1. Most application development today is done in object-oriented programming languages: if data is stored in relational tables, an awkward translation layer is required between the objects in the application code and the database model of tables, rows, and columns. The disconnect between the models is sometimes called an **impedance mismatch**.
 
-2. Locality of data is not good in relational model which supports multi-table schema.
+2. Locality of data[^3] [^4] is not good in relational model which supports multi-table schema.
+
+3. Although many-to-many relationships are supported they are not easy to work with and are not very intuitive with relational model (compared to graph model).
+
+4. If there are many entities then defining table for each entity will bloat the model. Here schemaless model will be advantageous.
 
 ## Document (Hierarchial) Model
 
+Because of the limitations of relational model DBs document model gained traction. Limitation of relational model DBs are:
+
+1. Scalability: SQL databases can be difficult to scale horizontally, especially for write-heavy systems. For example, you can provision multiple read-only replicas for read-heavy systems, but for write-heavy systems, you usually need to vertically scale the database, which can be expensive.
+
+2. Data modeling: SQL databases require a predefined schema and rigid data structure, which can make it difficult to adapt to changing data models and requirements.
+
+3. Performance: SQL databases can be slower than NoSQL databases, especially for complex queries and large data volumes.
+
+4. Efficiency: SQL databases can be inefficient with large volumes of data and may not be great for huge user loads or multiple concurrent operations.
+
+5. Unstructured data: SQL databases are not effective for storing and querying unstructured data where the format is unknown.
+
 ### Advantages
 
-1. Schema flexibility
+1. Schema flexibility [^1] [^2]
 
-2. Better performance due to locality
+2. Better performance due to locality [^3] [^4]
 
 3. For some applications document model is closer to data structures used by the application.
 
 ### Disadvantages
+
+1. No support for query optimizer, it’s easier to handcode the access paths for a particular query than to write a general-purpose optimizer—but the general-purpose solution wins in the long run.
+
+2. Doesn't support joins and joins will have to be impemented at application layer making the application code difficult.
+
+3. Difficult to represent many-to-one and many-to-many relationships.
 
 ## Graph (Network) Model
 
 ### Advantages
 
 ### Disadvantages
+
+## Which data model leads to simpler application code?
+
+It’s not possible to say in general which data model leads to simpler application code; it depends on the kinds of relationships that exist between data items. For highly interconnected data, the document model is awkward, the relational model is acceptable, and graph models are the most natural.
+
+[^1]: Document databases are sometimes called schemaless, but that’s misleading. A more accurate term is schema-on-read (the structure of the data is implicit, and only interpreted when the data is read), in contrast with schema-on-write (the traditional approach of relational databases, where the schema is explicit and the database ensures all written data conforms to it)
+[^2]: Schema-on-read is similar to dynamic (runtime) type checking in programming languages, whereas schema-on-write is similar to static (compile-time) type checking.
+[^3]: A document is usually stored as a single continuous string, encoded as JSON, XML, or a binary variant thereof (such as MongoDB’s BSON). If your application often needs to access the entire document (for example, to render it on a web page), there is a performance advantage to this storage locality. If data is split across multiple tables multiple index lookups are required to retrieve it all, which may require more disk seeks and take more time.
+[^4]: The locality advantage only applies if you need large parts of the document at the same time. The database typically needs to load the entire document, even if you access only a small portion of it, which can be wasteful on large documents. On updates to a document, the entire document usually needs to be rewritten—only modifications that don’t change the encoded size of a document can easily be performed in place. For these reasons, it is generally recommended that you keep documents fairly small and avoid writes that increase the size of a document. These performance limitations significantly reduce the set of situations in which document databases are useful.
