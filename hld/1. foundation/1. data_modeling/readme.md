@@ -35,7 +35,7 @@ Relational model laid out all the data in the open: a relation (table) is simply
 
 ## Document (Hierarchial) Model
 
-Because of the limitations of relational model DBs document model gained traction. Limitation of relational model DBs are:
+Document models target use cases where data comes in self-contained documents and relationships between one document and another are rare. Because of the limitations of relational model DBs document model gained traction. Limitation of relational model DBs are:
 
 1. Scalability: SQL databases can be difficult to scale horizontally, especially for write-heavy systems. For example, you can provision multiple read-only replicas for read-heavy systems, but for write-heavy systems, you usually need to vertically scale the database, which can be expensive.
 
@@ -65,13 +65,20 @@ Because of the limitations of relational model DBs document model gained tractio
 
 ## Graph (Network) Model
 
+If your application has mostly one-to-many relationships (tree-structured data) or no relationships between records, the document model is appropriate. But what if many-to-many relationships are very common in your data? The relational model can handle simple cases of many-to-many relationships, but as the connections within your data become more complex, it becomes more natural to start modeling your data as a graph. Graph model targets use cases where anything
+is potentially related to everything.
+
 ### Advantages
+
+1. Graphs are good for evolvability: as you add features to your application, a graph can easily be extended to accommodate changes in your application’s data structures.
 
 ### Disadvantages
 
 ## Which data model leads to simpler application code?
 
 It’s not possible to say in general which data model leads to simpler application code; it depends on the kinds of relationships that exist between data items. For highly interconnected data, the document model is awkward, the relational model is acceptable, and graph models are the most natural.
+
+All three models (document, relational, and graph) are widely used today, and each is good in its respective domain. One model can be emulated in terms of another model—for example, graph data can be represented in a relational database—but the result is often awkward. That’s why we have different systems for different purposes, not a single one-size-fits-all solution.
 
 [^1]: A document is usually stored as a single continuous string, encoded as JSON, XML, or a binary variant thereof (such as MongoDB’s BSON). If your application often needs to access the entire document (for example, to render it on a web page), there is a performance advantage to this storage locality. If data is split across multiple tables multiple index lookups are required to retrieve it all, which may require more disk seeks and take more time.
 [^2]: The locality advantage only applies if you need large parts of the document at the same time. The database typically needs to load the entire document, even if you access only a small portion of it, which can be wasteful on large documents. On updates to a document, the entire document usually needs to be rewritten—only modifications that don’t change the encoded size of a document can easily be performed in place. For these reasons, it is generally recommended that you keep documents fairly small and avoid writes that increase the size of a document. These performance limitations significantly reduce the set of situations in which document databases are useful.
