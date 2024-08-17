@@ -1,3 +1,5 @@
+# Common Concepts
+
 Three concerns that are important in most software systems:
 
 1. **Reliability**: Tolerating hardware and software faults and human errors. The system should continue to work correctly (performing the correct function at the desired level of performance) even in the face of adversity (hardware or software faults, and even human error)
@@ -41,16 +43,16 @@ We can and should design software in such a way that it will hopefully minimize 
 
 3. Evolvability: Make it easy for engineers to make changes to the system in the future, adapting it for unanticipated use cases as requirements change. Also known as extensibility, modifiability, or plasticity.
 
-### Backward vs forward compatibility
+## Backward/Forward compatibility
 
 - Backward compatibility - newer code can read data that was written by older code
 - Forward compatibility - older code can read data that was written by newer code
 
-### Serializable Transactions
+## Serializable Transactions
 
 https://www.tutorialcup.com/dbms/transaction-serializability.htm
 
-### Linearlizability
+## Linearlizability
 
 https://stackoverflow.com/questions/9762101/what-is-linearizability
 
