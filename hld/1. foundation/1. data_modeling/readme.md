@@ -12,3 +12,33 @@ In a complex application there may be more intermediary levels, such as APIs bui
 ## Relational Model
 
 As computers became vastly more powerful and networked, they started being used for increasingly diverse purposes. And remarkably, relational databases turned out to generalize very well, beyond their original scope of business data processing, to a broad variety of use cases.
+
+### Advantages
+
+1. Better support for joins
+
+2. Can support many-to-one and many-to-many relationships.
+
+### Disadvantages
+
+1. Most application development today is done in object-oriented programming languages: if data is stored in relational tables, an awkward translation layer is required between the objects in the application code and the database model of tables, rows, and columns. The disconnect between the models is sometimes called an **impedance mismatch**.
+
+2. Locality of data is not good in relational model which supports multi-table schema.
+
+## Document (Hierarchial) Model
+
+### Advantages
+
+1. Schema flexibility
+
+2. Better performance due to locality
+
+3. For some applications document model is closer to data structures used by the application.
+
+### Disadvantages
+
+## Graph (Network) Model
+
+### Advantages
+
+### Disadvantages
