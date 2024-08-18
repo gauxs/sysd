@@ -1,5 +1,7 @@
 # Data Querying
 
+> The mechanism by which application developer can ask for the data stored in DB.
+
 ### Imperative Query Language
 
 1. An **imperative query language** tells the computer to perform certain operations in a certain order.

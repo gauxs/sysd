@@ -1,5 +1,7 @@
 # Data Modeling
 
+> The format in which application devloper give the database his data.
+
 Data models are perhaps the **_most important part of developing software_**, because they have such a profound effect: not only on how the software is written, but also on how we think about the problem that we are solving. Most applications are built by layering one data model on top of another. Example:
 
 1. An application developer looks at the real world (in which there are people, organizations, goods, actions, money flows, sensors, etc.) and model it in terms of objects or data structures, and APIs that manipulate those data structures. Those structures are often specific to your application.
@@ -77,6 +79,8 @@ is potentially related to everything.
 ## Which data model leads to simpler application code?
 
 It’s not possible to say in general which data model leads to simpler application code; it depends on the kinds of relationships that exist between data items. For highly interconnected data, the document model is awkward, the relational model is acceptable, and graph models are the most natural.
+
+## Conclusion
 
 All three models (document, relational, and graph) are widely used today, and each is good in its respective domain. One model can be emulated in terms of another model—for example, graph data can be represented in a relational database—but the result is often awkward. That’s why we have different systems for different purposes, not a single one-size-fits-all solution.
 
