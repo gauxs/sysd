@@ -26,4 +26,10 @@ Indexes are built on top of storage engines to optimize data retrieval. The type
 2. Indexes on Page-Oriented Storage Engines
    - B-Trees: Organize data into a balanced tree structure, allowing quick reads and efficient updates by modifying only the necessary pages. B-trees are commonly used for traditional database indexing due to their ability to handle both point queries and range scans efficiently.
 
+## Conclusion
+
+As an application developer, if you’re armed with this knowledge about the internals of storage engines, you are in a much better position to know which tool is best suited for your particular application. If you need to adjust a database’s tuning parameters, this understanding allows you to imagine what effect a higher or a lower value may have.
+
+Although this chapter couldn’t make you an expert in tuning any one particular storage engine, it has hopefully equipped you with enough vocabulary and ideas that you can make sense of the documentation for the database of your choice.
+
 [^1]: an append-only sequence of records.
