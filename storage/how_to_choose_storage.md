@@ -47,6 +47,18 @@
   Additional Notes:
   Lucene: Although included under log-based, it's primarily a search engine library and not a database in the traditional sense, but it uses log-structured storage similar to LSM trees.
 
-3. Understand the replication strategy being used and their implications.
+3.  Understand the replication strategy being used and their implications.
 
-   - Leader based replication: PostgreSQL, MySQL, MongoDB, RethinkDB, Espresso, distributed message brokers such as Kafka and RabbitMQ highly available queues
+    Leader setup:
+
+    - Sigle Leader replication: PostgreSQL, MySQL, MongoDB, RethinkDB, Espresso, distributed message brokers such as Kafka and RabbitMQ highly available queues
+    - Multi Leader replication
+      - Clients with offline operation: CouchDB
+      - Collaborative editing: Google Docs
+      - Leaderless replication: Dynamo, Riak, Cassandra, and Voldemort
+
+    Conflict Resolution: Implementations of these algorithms in databases are still young
+
+        1. Conflict-free replicated datatypes (CRDTs): Riak 2.0
+        2. Mergeable persistent data structures:
+        3. Operational transformation: Google Docs
