@@ -55,7 +55,7 @@
     - Multi Leader replication
       - Clients with offline operation: CouchDB
       - Collaborative editing: Google Docs
-      - Leaderless replication: Dynamo, Riak, Cassandra, and Voldemort
+    - Leaderless replication: Dynamo, Riak, Cassandra, and Voldemort
 
     Conflict Resolution: Implementations of these algorithms in databases are still young
       - Conflict-free replicated datatypes (CRDTs): Riak 2.0
