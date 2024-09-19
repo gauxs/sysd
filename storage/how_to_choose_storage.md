@@ -58,7 +58,6 @@
       - Leaderless replication: Dynamo, Riak, Cassandra, and Voldemort
 
     Conflict Resolution: Implementations of these algorithms in databases are still young
-
-        1. Conflict-free replicated datatypes (CRDTs): Riak 2.0
-        2. Mergeable persistent data structures:
-        3. Operational transformation: Google Docs
+      - Conflict-free replicated datatypes (CRDTs): Riak 2.0
+      - Mergeable persistent data structures:
+      - Operational transformation: Google Docs
