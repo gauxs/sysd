@@ -56,8 +56,16 @@
       - Clients with offline operation: CouchDB
       - Collaborative editing: Google Docs
     - Leaderless replication: Dynamo, Riak, Cassandra, and Voldemort
+      - Sloppy Quorums: Sloppy quorums are particularly useful for increasing write availability. It is optional in all common leaderless implementations. Example: Riak they are enabled by default, and in Cassandra and Voldemort they are disabled by default.
 
     Conflict Resolution: Implementations of these algorithms in databases are still young
-      - Conflict-free replicated datatypes (CRDTs): Riak 2.0
-      - Mergeable persistent data structures:
-      - Operational transformation: Google Docs
+
+    - Conflict-free replicated datatypes (CRDTs): Riak 2.0
+    - Mergeable persistent data structures:
+    - Operational transformation: Google Docs
+    - Last write wins (discarding concurrent writes)
+      - Even though the writes don’t have a natural ordering, we can force an arbitrary order on them.
+      - LWW achieves the goal of eventual convergence, but at the cost of durability.
+      - LWW may even drop writes that are not concurrent, LWW is a poor choice for conflict resolution.
+      - Example: LWW is only supported conflict resolution method in Cassandra, and an optional feature in Riak
+      - The only safe way of using a database with LWW is to ensure that a key is only written once and thereafter treated as immutable, thus avoiding any concurrent updates to the same key. For example, a recommended way of using Cassandra is to use a UUID as the key, thus giving each write operation a unique key
