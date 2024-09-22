@@ -69,3 +69,5 @@
       - LWW may even drop writes that are not concurrent, LWW is a poor choice for conflict resolution.
       - Example: LWW is only supported conflict resolution method in Cassandra, and an optional feature in Riak
       - The only safe way of using a database with LWW is to ensure that a key is only written once and thereafter treated as immutable, thus avoiding any concurrent updates to the same key. For example, a recommended way of using Cassandra is to use a UUID as the key, thus giving each write operation a unique key
+    - Version vectors: The collection of version numbers from all the replicas is called a version vector
+      - version vectors are sent from the database replicas to clients when values are read, and need to be sent back to the database when a value is subsequently written. (Riak encodes the version vector as a string that it calls causal context.) The version vector allows the database to distinguish between overwrites and concurrent writes.
