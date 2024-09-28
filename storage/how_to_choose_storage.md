@@ -73,6 +73,10 @@
       - version vectors are sent from the database replicas to clients when values are read, and need to be sent back to the database when a value is subsequently written. (Riak encodes the version vector as a string that it calls causal context.) The version vector allows the database to distinguish between overwrites and concurrent writes.
 
 4. Understanding partitioning and its strategies
+   Two ways of partitioning:
+     - By key range: Downside of key range partitioning is that certain access patterns can lead to hot spots.
+     - By Hash of key Because of this risk of skew and hot spots, many distributed datastores use a hash function to determine the partition for a given key.
+       
    Partitioning of HashKey:
 
      - For partitioning purposes, the hash function need not be cryptographically strong. Example: Cassandra and MongoDB use MD5, and Voldemort uses the FowlerNoll–Vo function
@@ -89,4 +93,5 @@
 
    Strategies for Rebalancing Partitions
 
-     - Hello
+     - Fixed number of partitions: This approach to rebalancing is used in Riak, Elasticsearch, Couchbase and Voldemort
+     - Dynamic partitioning: For databases that use key range partitioning a fixed number of partitions with fixed boundaries would be very inconvenient: if you got the boundaries wrong, you could end up with all of the data in one partition and all of the other partitions empty.
