@@ -77,3 +77,4 @@
 
      - For partitioning purposes, the hash function need not be cryptographically strong. Example: Cassandra and MongoDB use MD5, and Voldemort uses the FowlerNoll–Vo function
      - Many programming languages have simple hash functions built in (as they are used for hash tables), but they may not be suitable for partitioning: for example, in Java’s Object.hashCode() and Ruby’s Object#hash, the same key may have a different hash value in different processes
+     - by using the hash of the key for partitioning we lose a nice property of key-range partitioning: the ability to do efficient range queries
