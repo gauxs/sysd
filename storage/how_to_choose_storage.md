@@ -101,4 +101,6 @@ increase the number of nodes, the partitions become smaller again. Since a large
 
    Request routing after partiion rebalancing
 
-     - Hello 
+     - if I want to read or write the key “foo”, which IP address and port number do I need to connect to?
+     - Many distributed data systems rely on a separate coordination service such as ZooKeeper to keep track of this cluster metadata. Other actors, such as the routing tier or the partitioning-aware client, can subscribe to this information in ZooKeeper.
+     - Example: LinkedIn’s Espresso uses Helix for cluster management (which in turn relies on ZooKeeper). HBase, SolrCloud, and Kafka also use ZooKeeper to track partition assignment. MongoDB has a similar architecture, but it relies on its own config server implementation and mongos daemons as the routing tier. Cassandra and Riak take a different approach: they use a gossip protocol among the nodes to disseminate any changes in cluster state.
