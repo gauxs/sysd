@@ -80,3 +80,8 @@
      - By using the hash of the key for partitioning we lose a nice property of key-range partitioning: the ability to do efficient range queries
          - In MongoDB, if you have enabled hash-based sharding mode, any range query has to be sent to all partitions. Range queries on the primary key are not supported by Riak, Couchbase, or Voldemort.
          - Cassandra has compound primary key consisting of several columns. Only the first part of that key is hashed to determine the partition, but the other columns are used as a concatenated index for sorting the data in Cassandra’s SSTables.
+      
+   Secondary Indexes and Partition Key:
+
+     - Hello
+   
