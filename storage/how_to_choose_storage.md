@@ -95,3 +95,5 @@
 
      - Fixed number of partitions: This approach to rebalancing is used in Riak, Elasticsearch, Couchbase and Voldemort
      - Dynamic partitioning: For databases that use key range partitioning a fixed number of partitions with fixed boundaries would be very inconvenient: if you got the boundaries wrong, you could end up with all of the data in one partition and all of the other partitions empty. An advantage of dynamic partitioning is that the number of partitions adapts to the total data volume. A caveat is that an empty database starts off with a single partition, since there is no a priori information about where to draw the partition boundaries. While the dataset is small—until it hits the point at which the first partition is split—all writes have to be processed by a single node while the other nodes sit idle. Example: HBase and MongoDB
+         - Note: Dynamic partitioning is not only suitable for key range–partitioned data, but can equally well be used with hash-partitioned data. MongoDB since version 2.4 supports both key-range and hash partitioning, and it splits partitions dynamically in either case.
+     - Proportionally to nodes: 
