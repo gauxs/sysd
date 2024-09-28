@@ -98,3 +98,7 @@
          - Note: Dynamic partitioning is not only suitable for key range–partitioned data, but can equally well be used with hash-partitioned data. MongoDB since version 2.4 supports both key-range and hash partitioning, and it splits partitions dynamically in either case.
      - Proportionally to nodes: the size of each partition grows proportionally to the dataset size while the number of nodes remains unchanged, but when you
 increase the number of nodes, the partitions become smaller again. Since a larger data volume generally requires a larger number of nodes to store, this approach also keeps the size of each partition fairly stable. Example: Cassandra and Ketama
+
+   Request routing after partiion rebalancing
+
+     - Hello 
