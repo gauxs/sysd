@@ -83,5 +83,5 @@
       
    Secondary Indexes and Partition Key:
 
-     - Hello
+     - The problem with secondary indexes is that they don’t map neatly to partitions. There are two main approaches to partitioning a database with secondary indexes: document-based partitioning and term-based partitioning.
    
