@@ -86,4 +86,7 @@
      - The problem with secondary indexes is that they don’t map neatly to partitions. There are two main approaches to partitioning a database with secondary indexes: document-based partitioning and term-based partitioning.
      - Partitioning Secondary Indexes by Document: Each partition is completely separate: each partition maintains its own secondary indexes, covering only the documents in that partition. A document-partitioned index is also known as a local index. Example: MongoDB, Riak, Cassandra, Elasticsearch, SolrCloud, and VoltDB all use document-partitioned secondary indexes.
      - Partitioning Secondary Indexes by Term: Rather than each partition having its own secondary index (a local index), we can construct a global index that covers data in all partitions. The advantage of a global (term-partitioned) index over a document-partitioned index is that it can make reads more efficient. However, the downside of a global index is that writes are slower and more complicated, because a write to a single document may now affect multiple partitions of the index (every term in the document might be on a different partition, on a different node). In practice, updates to global secondary indexes are often asynchronous. Example: Riak’s search feature and the Oracle data warehouse
-   
+
+   Strategies for Rebalancing Partitions
+
+     - Hello
