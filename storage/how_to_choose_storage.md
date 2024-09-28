@@ -74,8 +74,8 @@
 
 4. Understanding partitioning and its strategies
    Two ways of partitioning:
-     - By key range: Downside of key range partitioning is that certain access patterns can lead to hot spots.
-     - By Hash of key Because of this risk of skew and hot spots, many distributed datastores use a hash function to determine the partition for a given key.
+     - By key range: Downside of key range partitioning is that certain access patterns can lead to hot spots. Example: HBase and RethinkDB
+     - By Hash of key Because of this risk of skew and hot spots, many distributed datastores use a hash function to determine the partition for a given key. Example: DynamoDB
        
    Partitioning of HashKey:
 
