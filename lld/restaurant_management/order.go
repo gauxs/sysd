@@ -1,5 +1,9 @@
 package restaurantmanagement
 
+import (
+	"github.com/google/uuid"
+)
+
 type OrderStatus int
 
 const (
@@ -32,4 +36,12 @@ type Order struct {
 	Status       OrderStatus
 	OrderedItems []OrderedItem
 	Billing      Billing
+}
+
+func NewOrder() *Order {
+	orderId := uuid.New()
+	return &Order{
+		ID:     orderId.String(),
+		Status: OrderStatusCreated,
+	}
 }
